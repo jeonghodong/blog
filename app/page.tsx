@@ -1,26 +1,28 @@
-// app/page.tsx
 import Link from "next/link";
+import { ExampleUsage } from "./_components/MarkdownRenderer";
+import { Typography, TypographyShowcase } from "./_components/Typography";
 import { getPosts } from "./_lib/posts";
 
 export default async function Home() {
   const posts = await getPosts();
 
   console.log("posts", posts);
-  console.log("posts", posts);
-  console.log("posts", posts);
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-4">My Blog</h1>
+    <div>
+      <Typography variant="title.100_sb">토스 블로그</Typography>
+      <Typography variant="body.100">최신 게시글 목록</Typography>
       <ul>
         {posts.map((post) => (
-          <li key={post.id} className="mb-2">
+          <li key={post.id}>
             <Link href={`/post/${post.id}`}>
-              <span className="text-blue-500 hover:underline cursor-pointer">{post.title}</span>
+              <Typography variant="body.100">{post.title}</Typography>
             </Link>
           </li>
         ))}
       </ul>
+      <TypographyShowcase />
+      <ExampleUsage />
     </div>
   );
 }

@@ -1,42 +1,27 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
   }
 }
-
-html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
+  font-family: "Noto Sans KR", "Noto Sans", sans-serif;
 }
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Noto Sans KR */
+@font-face {
+  font-family: "Noto Sans KR";
+  src: url("../_assets/fonts/noto-sans-kr.woff2");
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
 }
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+/* Noto Sans EN */
+@font-face {
+  font-family: "Noto Sans";
+  src: url("../_assets/fonts/noto-sans-en.woff2");
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
 }

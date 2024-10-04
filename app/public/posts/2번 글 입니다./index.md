@@ -3,10 +3,13 @@
 처음 nextjs 소스 코드 레포지토리에 블로그 content가 업로드 되도록 했었습니다.
 이 때 문제는 Obsidian Vault에 블로그 관련 소스 코드도 같이 존재하는 문제가 있었습니다.
 
+ㄹㅁㅇㄴㄹㅁㄴㅇㄹ
+
 이를 해결하기 위해 사용한 방법은 blog-content란 레포지토리로 분리하여 사용하는 것이었고
 이때 생긴 단점을 블로그 소스 코드에서 github SDK를 사용하여 markdown을 읽어야하는 단점이 있었습니다.
 
-![](./images/ghost2.jpeg)
+![](posts/2번%20글%20입니다./images/ghost2.jpeg)
+<img src="./images/ghost2.jpeg" alt="이미지 설명" width="300">
 
 ---
 
