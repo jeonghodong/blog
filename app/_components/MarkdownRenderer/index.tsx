@@ -5,6 +5,7 @@
 import ReactMarkdown from "react-markdown";
 import { Typography } from "../Typography";
 import Image from "next/image";
+import rehypeHighlight from "rehype-highlight";
 
 interface MarkdownRendererProps {
   content: string;
@@ -87,7 +88,11 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, postId }) 
       return <Image src={imageSrc} alt={alt} width={500} height={350} layout="responsive" />;
     },
   };
-  return <ReactMarkdown components={components}>{content}</ReactMarkdown>;
+  return (
+    <ReactMarkdown components={components} rehypePlugins={[rehypeHighlight]}>
+      {content}
+    </ReactMarkdown>
+  );
 };
 export default MarkdownRenderer;
 // 사용 예시
