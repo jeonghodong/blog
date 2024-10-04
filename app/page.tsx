@@ -19,8 +19,8 @@ export default async function Home() {
           </li>
         ))}
       </ul>
-      <TypographyShowcase />
-      <ExampleUsage />
+      {/* <TypographyShowcase /> */}
+      {/* <ExampleUsage /> */}
     </div>
   );
 }
