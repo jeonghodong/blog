@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { ExampleUsage } from "./_components/MarkdownRenderer";
-import { Typography, TypographyShowcase } from "./_components/Typography";
+import { Typography } from "./_components/Typography";
 import { getPosts } from "./_lib/posts";
 
 export default async function Home() {
