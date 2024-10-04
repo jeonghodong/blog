@@ -81,7 +81,9 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, postId }) 
     ),
     img: ({ src, alt }: any) => {
       // 상대 경로를 절대 경로로 변환
-      const imageSrc = src.startsWith("./") || src.startsWith("../") ? `/blog-posts/${postId}/${src.replace(/^\.\.?\//, "")}` : src;
+      const imageSrc = src.startsWith("http://") || src.startsWith("https://") ? src : `/blog-posts/${postId}/${src.replace(/^\.?\//, "")}`;
+
+      console.log(imageSrc);
       return <Image src={imageSrc} alt={alt} width={500} height={350} layout="responsive" />;
     },
   };
@@ -107,7 +109,7 @@ const ExampleUsage: React.FC = () => {
   `;
   return (
     <div className="p-8">
-      <MarkdownRenderer content={markdownContent} postId="2번 글 입니다." />
+      <MarkdownRenderer content={markdownContent} postId={"2번 글 입니다."} />
     </div>
   );
 };
