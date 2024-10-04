@@ -6,8 +6,6 @@ import { getPosts } from "./_lib/posts";
 export default async function Home() {
   const posts = await getPosts();
 
-  console.log("posts", posts);
-
   return (
     <div>
       <Typography variant="title.100_sb">토스 블로그</Typography>
@@ -15,7 +13,7 @@ export default async function Home() {
       <ul>
         {posts.map((post) => (
           <li key={post.id}>
-            <Link href={`/post/${post.id}`}>
+            <Link href={`/post/${encodeURIComponent(post.id)}`}>
               <Typography variant="body.100">{post.title}</Typography>
             </Link>
           </li>

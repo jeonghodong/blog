@@ -79,16 +79,10 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, postId }) 
         {children}
       </li>
     ),
-    img: (image: any) => {
-      let src = image.src;
-      const alt = image.alt || "";
-
-      // 상대 경로인 경우 절대 경로로 변환
-      if (src.startsWith("./") || (!src.startsWith("/") && !src.startsWith("http"))) {
-        src = `/posts/${postId}/${src.replace(/^\.\//, "")}`;
-      }
-
-      return <Image src={src} alt={alt} width={500} height={350} layout="responsive" />;
+    img: ({ src, alt }: any) => {
+      // 상대 경로를 절대 경로로 변환
+      const imageSrc = src.startsWith("./") || src.startsWith("../") ? `/blog-posts/${postId}/${src.replace(/^\.\.?\//, "")}` : src;
+      return <Image src={imageSrc} alt={alt} width={500} height={350} layout="responsive" />;
     },
   };
   return <ReactMarkdown components={components}>{content}</ReactMarkdown>;
