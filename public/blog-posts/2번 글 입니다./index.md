@@ -7,7 +7,7 @@ tags:
   - react
   - nextjs
 draft: false
-thumbnail: image.png
+thumbnail: thumnail.jpeg
 ---
 ## 문제
 
@@ -19,7 +19,7 @@ thumbnail: image.png
 이를 해결하기 위해 사용한 방법은 blog-content란 레포지토리로 분리하여 사용하는 것이었고
 이때 생긴 단점을 블로그 소스 코드에서 github SDK를 사용하여 markdown을 읽어야하는 단점이 있었습니다.
 
-![](./images/ghost2.jpeg)
+![](thumnail.jpeg)
 
 ---
 
