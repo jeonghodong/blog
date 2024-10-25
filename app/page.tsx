@@ -1,13 +1,12 @@
 import Link from "next/link";
 import { Typography } from "./_components/Typography/Typography";
-import { getPosts } from "./_lib/posts";
+import { getAllPosts } from "./_lib/posts";
+import { formatDate } from "./_utils/date";
 
 export default async function Home() {
-  const posts = await getPosts();
+  const posts = getAllPosts();
 
-  console.log(posts);
-  console.log(posts);
-  console.log(posts);
+  console.log("posts", posts);
 
   return (
     <div className="max-w-7xl mx-auto px-4">
@@ -44,12 +43,10 @@ export default async function Home() {
                     {post.title}
                   </Typography>
                   <Typography variant="body.100" className="text-gray-600 mb-2">
-                    {/* {post.excerpt} */}
-                    ㅁㄴㅇㄹㅁㅇㄴㄹ
+                    {post.excerpt}
                   </Typography>
                   <Typography variant="body.100" className="text-gray-400 mt-auto">
-                    {/* {post.date} • {post.author} */}
-                    14314314
+                    {formatDate(post.date)}
                   </Typography>
                 </div>
               </Link>
