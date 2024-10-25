@@ -9,11 +9,6 @@ export default async function Page({ params }: { params: { id: string } }) {
 
   console.log("post", post);
   const title = decodeURIComponent(id);
-  // const content = await getPostContent(id);
-
-  // if (content === null) {
-  //   return <div>포스트를 찾을 수 없습니다.</div>;
-  // }
 
   return (
     <div className="max-w-[700px] mx-auto">

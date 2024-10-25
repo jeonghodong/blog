@@ -12,6 +12,7 @@ interface PostData {
   tags: string[];
   draft: boolean;
   content: string;
+  thumbnail?: string; // 썸네일 이미지 경로
 }
 
 /**

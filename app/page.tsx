@@ -35,22 +35,28 @@ export default async function Home() {
 
           {/* 게시글 목록 */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {posts.map((post) => (
-              <Link key={post.id} href={`/post/${encodeURIComponent(post.id)}`} className="block">
-                <div className="flex flex-col h-full">
-                  <div className="bg-gray-200 h-40 rounded-lg mb-4"></div>
-                  <Typography variant="title.100_sb" className="mb-2">
-                    {post.title}
-                  </Typography>
-                  <Typography variant="body.100" className="text-gray-600 mb-2">
-                    {post.excerpt}
-                  </Typography>
-                  <Typography variant="body.100" className="text-gray-400 mt-auto">
-                    {formatDate(post.date)}
-                  </Typography>
-                </div>
-              </Link>
-            ))}
+            {posts.map((post) => {
+              console.log(post.thumbnail);
+              console.log(post.thumbnail);
+              console.log(post.thumbnail);
+              console.log(post.thumbnail);
+              return (
+                <Link key={post.id} href={`/post/${encodeURIComponent(post.id)}`} className="block">
+                  <div className="flex flex-col h-full">
+                    <div className="bg-gray-200 h-40 rounded-lg mb-4"></div>
+                    <Typography variant="title.100_sb" className="mb-2">
+                      {post.title}
+                    </Typography>
+                    <Typography variant="body.100" className="text-gray-600 mb-2">
+                      {post.excerpt}
+                    </Typography>
+                    <Typography variant="body.100" className="text-gray-400 mt-auto">
+                      {formatDate(post.date)}
+                    </Typography>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
 
