@@ -7,7 +7,7 @@ tags:
   - react
   - nextjs
 draft: false
-thumbnail: "'images/image.png'"
+thumbnail: image.png
 ---
 안녕하세요.
 \

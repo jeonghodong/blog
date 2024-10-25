@@ -43,6 +43,7 @@ export function getPostData(encodedId: string): PostData {
       tags: Array.isArray(data.tags) ? data.tags : [],
       draft: data.draft ?? false,
       content: content.trim(), // frontmatter가 제거된 순수 content
+      thumbnail: data.thumbnail ? `/blog-posts/${id}/images/${data.thumbnail}` : "", // 경로 수정
     };
   } catch (error) {
     console.error(`Error reading post ${encodedId}:`, error);

@@ -7,6 +7,7 @@ tags:
   - react
   - nextjs
 draft: false
+thumbnail: image.png
 ---
 아키텍처 입니다.
 ![](./images/image.png)

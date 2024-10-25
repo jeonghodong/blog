@@ -7,6 +7,7 @@ tags:
   - react
   - nextjs
 draft: false
+thumbnail: image.png
 ---
 ## 문제
 

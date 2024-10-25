@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Link from "next/link";
 import { Typography } from "./_components/Typography/Typography";
 import { getAllPosts } from "./_lib/posts";
 import { formatDate } from "./_utils/date";
+import Image from "next/image";
 
 export default async function Home() {
   const posts = getAllPosts();
@@ -35,15 +37,13 @@ export default async function Home() {
 
           {/* 게시글 목록 */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {posts.map((post) => {
-              console.log(post.thumbnail);
-              console.log(post.thumbnail);
-              console.log(post.thumbnail);
-              console.log(post.thumbnail);
+            {posts.map((post: any) => {
+              console.log("thumbnail", post.thumbnail);
+              console.log("thumbnail", post.thumbnail);
               return (
                 <Link key={post.id} href={`/post/${encodeURIComponent(post.id)}`} className="block">
                   <div className="flex flex-col h-full">
-                    <div className="bg-gray-200 h-40 rounded-lg mb-4"></div>
+                    <div className="bg-gray-200 h-40 rounded-[12px] mb-4 relative">{post.thumbnail ? <Image src={post.thumbnail} alt={post.title} fill className="object-cover rounded-[12px]" /> : <span className="text-gray-400">No Image</span>}</div>
                     <Typography variant="title.100_sb" className="mb-2">
                       {post.title}
                     </Typography>

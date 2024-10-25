@@ -2,6 +2,10 @@ import MarkdownRenderer from "@/app/_components/MarkdownRenderer/MarkdownRendere
 import { Typography } from "@/app/_components/Typography/Typography";
 import { getPostData } from "@/app/_lib/posts";
 
+// TODO: 디테일 페이지에 섬네일 위에 렌더되도록
+// TODO: 디테일 페이지에 섬네일 위에 렌더되도록
+// TODO: 디테일 페이지에 섬네일 위에 렌더되도록
+// TODO: 디테일 페이지에 섬네일 위에 렌더되도록
 export default async function Page({ params }: { params: { id: string } }) {
   const { id } = params;
 
