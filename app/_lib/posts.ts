@@ -13,6 +13,8 @@ export async function getPosts(): Promise<Post[]> {
 
   const postFolders = entries.filter((entry) => entry.isDirectory() && entry.name !== ".obsidian");
 
+  console.log("postFolders", postFolders);
+  console.log("postFolders", postFolders);
   const posts = postFolders.map((folder) => ({
     id: folder.name,
     title: folder.name.replace(/-/g, " "),

@@ -3,7 +3,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import ReactMarkdown from "react-markdown";
-import { Typography } from "../Typography";
+import { Typography } from "../Typography/Typography";
 import Image from "next/image";
 
 interface MarkdownRendererProps {

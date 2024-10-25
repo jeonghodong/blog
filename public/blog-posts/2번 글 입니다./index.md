@@ -1,3 +1,13 @@
+---
+title: 포스트 제목
+date: 2024-10-25
+lastmod: 2024-10-25
+excerpt: 이 글은 React와 Next.js를 사용한 웹 개발에 대한 포스트입니다.
+tags:
+  - react
+  - nextjs
+draft: false
+---
 ## 문제
 
 처음 nextjs 소스 코드 레포지토리에 블로그 content가 업로드 되도록 했었습니다.

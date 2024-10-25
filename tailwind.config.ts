@@ -33,6 +33,9 @@ const config: Config = {
             DEFAULT: "#FEFEFE",
             1: "#D1D5DB",
           },
+          border: {
+            DEFAULT: "#E5E5E5",
+          },
         },
         dark: {
           text: {
@@ -45,6 +48,9 @@ const config: Config = {
             DEFAULT: "#1E1E1E",
             1: "#2D2D2D",
             2: "#ABABAB",
+          },
+          border: {
+            DEFAULT: "#2D2D2D",
           },
         },
       },

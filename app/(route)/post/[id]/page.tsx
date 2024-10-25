@@ -1,5 +1,5 @@
-import MarkdownRenderer from "@/app/_components/MarkdownRenderer";
-import { Typography } from "@/app/_components/Typography";
+import MarkdownRenderer from "@/app/_components/MarkdownRenderer/MarkdownRenderer";
+import { Typography } from "@/app/_components/Typography/Typography";
 import { getPostContent } from "@/app/_lib/post";
 
 export default async function Page({ params }: { params: { id: string } }) {
@@ -12,7 +12,7 @@ export default async function Page({ params }: { params: { id: string } }) {
   }
 
   return (
-    <div>
+    <div className="max-w-[700px] mx-auto">
       <Typography variant="headline.100">{title}</Typography>
       <MarkdownRenderer content={content} postId={title} />
     </div>
