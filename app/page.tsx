@@ -38,8 +38,8 @@ export default async function Home() {
           {/* 게시글 목록 */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {posts.map((post: any) => {
-              console.log("thumbnail", post.thumbnail);
-              console.log("thumbnail", post.thumbnail);
+              console.log("post", post);
+              console.log("post", post);
               return (
                 <Link key={post.id} href={`/post/${encodeURIComponent(post.id)}`} className="block">
                   <div className="flex flex-col h-full">

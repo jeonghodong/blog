@@ -1,5 +1,5 @@
 ---
-title: 포스트 제목
+title: 테스트 입니다~~~~~~
 date: 2024-10-25
 lastmod: 2024-10-25
 excerpt: 이 글은 React와 Next.js를 사용한 웹 개발에 대한 포스트입니다.
