@@ -11,7 +11,6 @@ export default async function Page({ params }: { params: { id: string } }) {
 
   const post = getPostData(id);
 
-  console.log("post", post);
   const title = decodeURIComponent(id);
 
   return (

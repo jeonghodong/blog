@@ -1,10 +1,9 @@
-// app/_lib/posts.ts
 import fs from "fs";
-import path from "path";
 import matter from "gray-matter";
+import path from "path";
 
 interface PostData {
-  id: string;
+  slug: string; // 기존 id를 slug로 변경 (URL용)
   title: string;
   date: string;
   lastmod: string;
@@ -12,19 +11,18 @@ interface PostData {
   tags: string[];
   draft: boolean;
   content: string;
-  thumbnail?: string; // 썸네일 이미지 경로
+  thumbnail?: string;
 }
-
 /**
  * 포스트 데이터를 가져오는 함수
  * @param encodedId - 인코딩된 포스트 ID
  * @returns PostData - 포스트 데이터
  */
-export function getPostData(encodedId: string): PostData {
+export function getPostData(encodedSlug: string): PostData {
   try {
-    const id = decodeURIComponent(encodedId);
+    const slug = decodeURIComponent(encodedSlug);
     const postsDirectory = path.join(process.cwd(), "public", "blog-posts");
-    const postPath = path.join(postsDirectory, id);
+    const postPath = path.join(postsDirectory, slug);
     const filePath = path.join(postPath, "index.md");
 
     if (!fs.existsSync(filePath)) {
@@ -32,21 +30,21 @@ export function getPostData(encodedId: string): PostData {
     }
 
     const fileContents = fs.readFileSync(filePath, "utf8");
-    const { data, content } = matter(fileContents); // matter 결과를 구조분해
+    const { data, content } = matter(fileContents);
 
     return {
-      id,
-      title: data.title || id,
+      slug: slug,
+      title: data.title || slug,
       date: data.date ? new Date(data.date).toISOString() : new Date().toISOString(),
       lastmod: data.lastmod ? new Date(data.lastmod).toISOString() : new Date(data.date).toISOString(),
       excerpt: data.excerpt || "",
       tags: Array.isArray(data.tags) ? data.tags : [],
       draft: data.draft ?? false,
-      content: content.trim(), // frontmatter가 제거된 순수 content
-      thumbnail: data.thumbnail ? `/blog-posts/${id}/images/${data.thumbnail}` : "", // 경로 수정
+      content: content.trim(),
+      thumbnail: data.thumbnail ? `/blog-posts/${slug}/images/${data.thumbnail}` : "",
     };
   } catch (error) {
-    console.error(`Error reading post ${encodedId}:`, error);
+    console.error(`Error reading post ${encodedSlug}:`, error);
     throw error;
   }
 }
@@ -118,6 +116,10 @@ export function getPostsByTag(tag: string): PostData[] {
   return getAllPosts().filter((post) => post.tags.some((t) => t.toLowerCase() === tag.toLowerCase()));
 }
 
+/**
+ * 모든 태그를 가져오는 함수
+ * @returns string[] - 모든 태그
+ */
 export function getAllTags(): string[] {
   const posts = getAllPosts();
   const tagSet = new Set<string>(posts.flatMap((post) => post.tags).map((tag) => tag.toLowerCase()));

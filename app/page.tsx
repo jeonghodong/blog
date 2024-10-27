@@ -38,10 +38,8 @@ export default async function Home() {
           {/* 게시글 목록 */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {posts.map((post: any) => {
-              console.log("post", post);
-              console.log("post", post);
               return (
-                <Link key={post.id} href={`/post/${encodeURIComponent(post.id)}`} className="block">
+                <Link key={post.slug} href={`/post/${encodeURIComponent(post.slug)}`} className="block">
                   <div className="flex flex-col h-full">
                     <div className="bg-gray-200 h-40 rounded-[12px] mb-4 relative">{post.thumbnail ? <Image src={post.thumbnail} alt={post.title} fill className="object-cover rounded-[12px]" /> : <span className="text-gray-400">No Image</span>}</div>
                     <Typography variant="title.100_sb" className="mb-2">
