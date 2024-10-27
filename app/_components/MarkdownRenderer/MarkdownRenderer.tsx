@@ -8,9 +8,15 @@ import Image from "next/image";
 
 interface MarkdownRendererProps {
   content: string;
-  postId: string;
+  slug: string;
 }
-const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, postId }) => {
+
+/**
+ * 마크다운 렌더러
+ * @param param0
+ * @returns
+ */
+const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, slug }) => {
   const components = {
     h1: ({ children, ...props }: any) => (
       <Typography variant="headline.100" {...props}>
@@ -81,16 +87,18 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, postId }) 
     ),
     img: ({ src, alt }: any) => {
       // 상대 경로를 절대 경로로 변환
-      const imageSrc = src.startsWith("http://") || src.startsWith("https://") ? src : `/blog-posts/${postId}/${src.replace(/^\.?\//, "")}`;
-
-      console.log(imageSrc);
+      const imageSrc = src.startsWith("http://") || src.startsWith("https://") ? src : `/blog-posts/${slug}/${src.replace(/^\.?\//, "")}`;
       return <Image src={imageSrc} alt={alt} width={500} height={350} layout="responsive" />;
     },
   };
   return <ReactMarkdown components={components}>{content}</ReactMarkdown>;
 };
 export default MarkdownRenderer;
-// 사용 예시
+
+/**
+ * 사용 예시
+ * @returns
+ */
 const ExampleUsage: React.FC = () => {
   const markdownContent = `
 # 제목 1
@@ -109,7 +117,7 @@ const ExampleUsage: React.FC = () => {
   `;
   return (
     <div className="p-8">
-      <MarkdownRenderer content={markdownContent} postId={"2번 글 입니다."} />
+      <MarkdownRenderer content={markdownContent} slug={"2번 글 입니다."} />
     </div>
   );
 };
