@@ -19,37 +19,37 @@ interface MarkdownRendererProps {
 const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, slug }) => {
   const components = {
     h1: ({ children, ...props }: any) => (
-      <Typography variant="headline.100" {...props}>
+      <Typography variant="headline.100" {...props} className="mt-[40px] mb-[5px]">
         {children}
       </Typography>
     ),
     h2: ({ children, ...props }: any) => (
-      <Typography variant="headline.200" {...props}>
+      <Typography variant="headline.200" {...props} className="mt-[30px] mb-[5px]">
         {children}
       </Typography>
     ),
     h3: ({ children, ...props }: any) => (
-      <Typography variant="headline.300" {...props}>
+      <Typography variant="headline.300" {...props} className="mt-[20px] mb-[5px]">
         {children}
       </Typography>
     ),
     h4: ({ children, ...props }: any) => (
-      <Typography variant="headline.400" {...props}>
+      <Typography variant="headline.400" {...props} className="mt-[10px] mb-[5px]">
         {children}
       </Typography>
     ),
     h5: ({ children, ...props }: any) => (
-      <Typography variant="title.100" {...props}>
+      <Typography variant="title.100" {...props} className="mt-[10px] mb-[5px]">
         {children}
       </Typography>
     ),
     h6: ({ children, ...props }: any) => (
-      <Typography variant="title.200" {...props}>
+      <Typography variant="title.200" {...props} className="mt-[10px] mb-[5px]">
         {children}
       </Typography>
     ),
     p: ({ children, ...props }: any) => (
-      <Typography variant="body.100" {...props}>
+      <Typography variant="body.100" color="DEFAULT" {...props} className="mt-[24px] mb-[8px]">
         {children}
       </Typography>
     ),
@@ -78,10 +78,10 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, slug }) =>
         </div>
       );
     },
-    ul: ({ children }: any) => <ul className="text-light-text dark:text-dark-text list-disc list-inside my-2">{children}</ul>,
-    ol: ({ children }: any) => <ol className="text-light-text dark:text-dark-text list-decimal list-inside my-2">{children}</ol>,
+    ul: ({ children }: any) => <ul className="text-light-text dark:text-dark-text list-disc ml-4 my-2 font-light">{children}</ul>,
+    ol: ({ children }: any) => <ol className="text-light-text dark:text-dark-text list-decimal ml-4 my-2 font-light">{children}</ol>,
     li: ({ children, ...props }: any) => (
-      <li className="text-light-text dark:text-dark-text" {...props}>
+      <li className="text-light-text dark:text-dark-text font-light pl-1 marker:text-xs" {...props}>
         {children}
       </li>
     ),

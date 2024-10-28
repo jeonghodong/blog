@@ -2,7 +2,7 @@ import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
 
-interface PostData {
+export interface PostData {
   slug: string; // 기존 id를 slug로 변경 (URL용)
   title: string;
   date: string;
