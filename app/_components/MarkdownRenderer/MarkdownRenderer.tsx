@@ -18,21 +18,39 @@ interface MarkdownRendererProps {
  */
 const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, slug }) => {
   const components = {
-    h1: ({ children, ...props }: any) => (
-      <Typography variant="headline.100" {...props} className="mt-[40px] mb-[5px]">
-        {children}
-      </Typography>
-    ),
-    h2: ({ children, ...props }: any) => (
-      <Typography variant="headline.200" {...props} className="mt-[30px] mb-[5px]">
-        {children}
-      </Typography>
-    ),
-    h3: ({ children, ...props }: any) => (
-      <Typography variant="headline.300" {...props} className="mt-[20px] mb-[5px]">
-        {children}
-      </Typography>
-    ),
+    h1: ({ children, ...props }: any) => {
+      const id = children
+        ?.toString()
+        .toLowerCase()
+        .replace(/[^a-zA-Z0-9]+/g, "-");
+      return (
+        <Typography variant="headline.100" {...props} id={id} className="mt-[40px] mb-[5px]">
+          {children}
+        </Typography>
+      );
+    },
+    h2: ({ children, ...props }: any) => {
+      const id = children
+        ?.toString()
+        .toLowerCase()
+        .replace(/[^a-zA-Z0-9]+/g, "-");
+      return (
+        <Typography variant="headline.200" {...props} id={id} className="mt-[30px] mb-[5px]">
+          {children}
+        </Typography>
+      );
+    },
+    h3: ({ children, ...props }: any) => {
+      const id = children
+        ?.toString()
+        .toLowerCase()
+        .replace(/[^a-zA-Z0-9]+/g, "-");
+      return (
+        <Typography variant="headline.300" {...props} id={id} className="mt-[20px] mb-[5px]">
+          {children}
+        </Typography>
+      );
+    },
     h4: ({ children, ...props }: any) => (
       <Typography variant="headline.400" {...props} className="mt-[10px] mb-[5px]">
         {children}
