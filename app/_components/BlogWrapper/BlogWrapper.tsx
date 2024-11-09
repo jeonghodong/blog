@@ -26,9 +26,11 @@ export default function BlogWrapper({ posts }: BlogWrapperProps) {
     <div className="flex">
       <PostList posts={filteredPosts} selectedTags={selectedTags} onTagRemove={handleTagRemove} />
 
-      <div className="w-px bg-gray-200" />
+      <div className="hidden md:block w-px bg-gray-200" />
 
-      <Sidebar posts={posts} selectedTags={selectedTags} onTagToggle={handleTagToggle} />
+      <div className="hidden md:block">
+        <Sidebar posts={posts} selectedTags={selectedTags} onTagToggle={handleTagToggle} />
+      </div>
     </div>
   );
 }
