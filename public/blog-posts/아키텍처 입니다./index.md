@@ -5,7 +5,6 @@ lastmod: 2024-10-25
 excerpt: 테스트 입니다~~~
 tags:
   - react
-  - nextjs
 draft: false
 thumbnail: image.png
 ---

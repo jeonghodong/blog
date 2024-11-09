@@ -5,7 +5,7 @@ lastmod: 2024-10-25
 excerpt: 이 글은 React와 Next.js를 사용한 웹 개발에 대한 포스트입니다.
 tags:
   - react
-  - nextjs
+  - backend
 draft: false
 thumbnail: thumnail.jpeg
 ---

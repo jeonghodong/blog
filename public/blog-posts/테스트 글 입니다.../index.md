@@ -6,6 +6,7 @@ excerpt: 안녕하세요 테스트 글입니다~
 tags:
   - react
   - nextjs
+  - dev
 draft: false
 thumbnail: image.png
 ---
