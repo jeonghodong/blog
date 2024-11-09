@@ -16,7 +16,8 @@ const config: Config = {
        */
       colors: {
         primary: {
-          DEFAULT: "#CCE4F0",
+          // DEFAULT: "#CCE4F0",
+          DEFAULT: "#0000C5",
           1: "#99C9E2",
           2: "#66ADD3",
           3: "#3392C5",
@@ -32,6 +33,7 @@ const config: Config = {
           bg: {
             DEFAULT: "#FEFEFE",
             1: "#D1D5DB",
+            2: "#8181B7",
           },
           border: {
             DEFAULT: "#E5E5E5",
@@ -48,6 +50,7 @@ const config: Config = {
             DEFAULT: "#1E1E1E",
             1: "#2D2D2D",
             2: "#ABABAB",
+            3: "#8181B7",
           },
           border: {
             DEFAULT: "#2D2D2D",
