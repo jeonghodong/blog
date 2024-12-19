@@ -30,7 +30,7 @@ export default async function Page({ params }: { params: { id: string } }) {
           {/* Tags */}
           <div className="flex gap-2 mt-[20px]">
             {tags.map((tag: string) => (
-              <div key={tag} className="bg-gray-200 rounded-full px-2 py-1">
+              <div key={tag} className="bg-gray-200 rounded-full inline-flex items-center px-3 py-1">
                 <Typography variant="caption.100">#{tag}</Typography>
               </div>
             ))}
