@@ -1,12 +1,12 @@
-import Header from "./_components/Header/Header";
-
 import "./_styles/globals.css";
+
+import Header from "./_components/Header/Header";
 
 const InnerLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <Header />
-      <div className="max-w-[1050px] mx-auto px-4 sm:px-6 lg:px-8">{children}</div>
+      <div className="max-w-[1050px] mx-auto">{children}</div>
     </>
   );
 };
@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="light">
+    <html lang="en" className="dark">
       <body className="bg-light-bg dark:bg-dark-bg">
         <InnerLayout>{children}</InnerLayout>
       </body>

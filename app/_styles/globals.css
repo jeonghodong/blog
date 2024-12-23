@@ -6,17 +6,51 @@
     text-wrap: balance;
   }
 }
+
+/* 다크모드 전환 애니메이션 */
+@layer base {
+  /* 배경색 전환 */
+  .bg-light-bg,
+  .bg-dark-bg,
+  .bg-light-bg-1,
+  .bg-dark-bg-1,
+  .bg-light-bg-2,
+  .bg-dark-bg-2 {
+    @apply transition-colors duration-300 ease-in-out;
+  }
+
+  /* 텍스트 색상 전환 */
+  .text-light-text,
+  .text-dark-text,
+  .text-light-text-1,
+  .text-dark-text-1,
+  .text-light-text-2,
+  .text-dark-text-2,
+  .text-light-text-3,
+  .text-dark-text-3 {
+    @apply transition-colors duration-300 ease-in-out;
+  }
+
+  /* 테두리 색상 전환 */
+  .border-light-border,
+  .border-dark-border {
+    @apply transition-colors duration-300 ease-in-out;
+  }
+}
+
 body {
   font-family: "Noto Sans KR", "Noto Sans", sans-serif;
 }
+
 /* Noto Sans KR */
-@font-face {
+@font-face {OOO
   font-family: "Noto Sans KR";
   src: url("../_assets/fonts/noto-sans-kr.woff2");
   font-style: normal;
   font-display: swap;
   font-weight: 100 900;
 }
+
 /* Noto Sans EN */
 @font-face {
   font-family: "Noto Sans";

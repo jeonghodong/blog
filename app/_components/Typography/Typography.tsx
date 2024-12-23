@@ -90,6 +90,7 @@ export interface TypographyProps {
   className?: string;
   color?: ColorKey;
   id?: string; // id prop 추가
+  onClick?: () => void;
 }
 
 function classNames(...classes: (string | undefined)[]) {
@@ -107,7 +108,7 @@ function getElementForVariant(variant: VariantKey): keyof JSX.IntrinsicElements 
   return "div";
 }
 
-const Typography: React.FC<TypographyProps> = ({ variant, children, className, color, id }) => {
+const Typography: React.FC<TypographyProps> = ({ variant, children, className, color, id, ...rest }) => {
   const colorClasses = {
     DEFAULT: "text-light-text dark:text-dark-text",
     1: "text-light-text-1 dark:text-dark-text-1",
@@ -122,7 +123,7 @@ const Typography: React.FC<TypographyProps> = ({ variant, children, className, c
   const Element = getElementForVariant(variant);
 
   return (
-    <Element id={id} className={classNames(variants[variant], lineHeights[variant], colorClass, className)}>
+    <Element id={id} className={classNames(variants[variant], lineHeights[variant], colorClass, className)} {...rest}>
       {typeof children === "string" ? <span>{children}</span> : children}
     </Element>
   );

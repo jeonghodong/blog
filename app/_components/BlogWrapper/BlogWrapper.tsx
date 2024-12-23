@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import { PostData } from "@/app/_lib/posts";
+import { useState } from "react";
 import PostList from "../PostList/PostList";
 import Sidebar from "../SideBar/SideBar";
 
@@ -26,7 +26,7 @@ export default function BlogWrapper({ posts }: BlogWrapperProps) {
     <div className="flex">
       <PostList posts={filteredPosts} selectedTags={selectedTags} onTagRemove={handleTagRemove} />
 
-      <div className="hidden md:block w-px bg-gray-200" />
+      <div className="hidden md:block w-px bg-light-border dark:bg-dark-border" />
 
       <div className="hidden md:block">
         <Sidebar posts={posts} selectedTags={selectedTags} onTagToggle={handleTagToggle} />
