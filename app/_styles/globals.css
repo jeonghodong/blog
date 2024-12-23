@@ -43,7 +43,7 @@ body {
 }
 
 /* Noto Sans KR */
-@font-face {OOO
+@font-face {
   font-family: "Noto Sans KR";
   src: url("../_assets/fonts/noto-sans-kr.woff2");
   font-style: normal;
