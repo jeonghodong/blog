@@ -22,20 +22,20 @@ thumbnail: image.png
 - Nestjs
 - Mysql
 
-![](./images/login.gif)
+![](login.gif)
 
 초반 나의 루돌프를 생성하기 위해 카카오톡 소셜 로그인을 진행합니다.
 
-![](./images/create.gif)
+![](create.gif)
 
 이 후 나만의 루돌프를 생성하게 돼요.
 
-![](./images/check-link.gif)
+![](check-link.gif)
 
 나의 루돌프가 생성되고 나면 링크 복사가 생깁니다. 해당 링크를 고객들에게 공유하여 저의 루돌프에게 양말(편지)을 선물 할 수 있어요.
 
-![](./images/post.gif)
-![](./images/read.gif)
+![](post.gif)
+![](read.gif)
 
 문제의 시작점은문제의 시작점은문제의 시작점은문제의 시작점은문제의 시작점은문제의 시작점은 입니다.
 
