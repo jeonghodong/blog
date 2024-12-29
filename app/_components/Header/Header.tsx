@@ -26,7 +26,7 @@ export default function Header() {
     <div className="flex justify-center items-center h-[60px] bg-light-bg dark:bg-dark-bg border-b border-light-border dark:border-dark-border w-full">
       <div className="flex justify-between items-center w-full px-[5%]">
         <Typography variant="body.300" className="cursor-pointer select-none" onClick={() => router.push("/")}>
-          🧑🏻‍💻 몰입을 즐기는 개발자, 정호동입니다.
+          🧑🏻‍💻 경계를 넘나드는 개발자, 정호동입니다
         </Typography>
 
         <div className="flex gap-2 items-center">

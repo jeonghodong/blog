@@ -1,6 +1,9 @@
 import "./_styles/globals.css";
 
 import Header from "./_components/Header/Header";
+import { DEFAULT_METADATA } from "./_constants/metadata";
+
+export const metadata = DEFAULT_METADATA;
 
 const InnerLayout = ({ children }: { children: React.ReactNode }) => {
   return (
