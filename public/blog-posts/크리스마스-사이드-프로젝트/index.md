@@ -7,7 +7,7 @@ tags:
   - 사이드프로젝트
   - front-end
   - back-end
-draft: false
+draft: true
 thumbnail: image.png
 ---
 ## 소개
