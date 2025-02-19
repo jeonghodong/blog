@@ -6,9 +6,10 @@ import LightModeIcon from "@/app/_assets/icons/ic_light_mode.svg";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Typography } from "../Typography/Typography";
+import Button from "../Button/Button";
 
 export default function Header() {
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
+  const [theme, setTheme] = useState<"dark" | "light">("light");
   const router = useRouter();
 
   const toggleTheme = () => {
@@ -31,7 +32,7 @@ export default function Header() {
 
         <div className="flex gap-2 items-center">
           {/* 기존 버튼들 */}
-          {/* <Button variant="solid" color="primary" size="sm">
+          <Button variant="solid" color="primary" size="sm">
             <Typography variant="caption.100" color="1">
               이력서 보기
             </Typography>
@@ -41,7 +42,7 @@ export default function Header() {
             <Typography variant="caption.100" color="DEFAULT">
               포트폴리오 보기
             </Typography>
-          </Button> */}
+          </Button>
 
           {/* 다크모드 토글 버튼 */}
           <button onClick={toggleTheme} className="p-2 transition-colors" aria-label="테마 변경">
