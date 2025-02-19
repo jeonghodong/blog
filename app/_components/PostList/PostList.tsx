@@ -32,13 +32,13 @@ export default function PostList({ posts, selectedTags, onTagRemove }: PostListP
             <div className="flex gap-4">
               {/* 콘텐츠 */}
               <div className="flex-1 flex flex-col min-w-0">
-                <Typography variant="title.100_sb" className="mb-2">
+                <Typography variant="title.100_sb" className="mb-1 md:mb-2 line-clamp-2">
                   {post.title}
                 </Typography>
-                <Typography variant="body.100" className="text-gray-600 mb-2">
+                <Typography variant="body.100" className="text-gray-600 mb-1 md:mb-2 line-clamp-2 hidden md:block">
                   {post.excerpt}
                 </Typography>
-                <Typography variant="body.100" className="text-gray-400 mt-auto">
+                <Typography variant="caption.100" className="text-gray-400 mt-auto">
                   {formatDate(post.date)}
                 </Typography>
               </div>
