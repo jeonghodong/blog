@@ -14,7 +14,7 @@ interface PostListProps {
 
 export default function PostList({ posts, selectedTags, onTagRemove }: PostListProps) {
   return (
-    <div className="flex-grow mr-8">
+    <div className="flex-grow mr-0 md:mr-8">
       {/* 선택된 태그 표시 영역 */}
       <div className="flex flex-wrap gap-2">
         {selectedTags.map((tag) => (
@@ -29,9 +29,9 @@ export default function PostList({ posts, selectedTags, onTagRemove }: PostListP
       <div className={`grid grid-cols-1 gap-8 transition-transform duration-300 ease-out ${selectedTags.length > 0 ? "translate-y-[28px]" : "translate-y-0"}`}>
         {posts.map((post) => (
           <Link key={post.slug} href={`/post/${encodeURIComponent(post.slug)}`} className="block">
-            <div className="flex gap-8">
-              {/* 콘텐츠 (80%) */}
-              <div className="w-4/5 flex flex-col">
+            <div className="flex gap-4">
+              {/* 콘텐츠 */}
+              <div className="flex-1 flex flex-col min-w-0">
                 <Typography variant="title.100_sb" className="mb-2">
                   {post.title}
                 </Typography>
@@ -43,8 +43,8 @@ export default function PostList({ posts, selectedTags, onTagRemove }: PostListP
                 </Typography>
               </div>
 
-              {/* 섬네일 (20%) */}
-              <div className="w-1/5 h-[100px] relative">
+              {/* 섬네일 - 고정 너비 사용 */}
+              <div className="w-[140px] h-[100px] flex-shrink-0 relative">
                 {post.thumbnail ? (
                   <Image src={post.thumbnail} alt={post.title} fill className="object-cover rounded-[12px]" />
                 ) : (
