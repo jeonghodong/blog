@@ -7,6 +7,10 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Typography } from "../Typography/Typography";
 
+// 헤더 컴포넌트인데 코드 리팩토링 필요함.. 흠 어떻게 해야할지....사이드바 컴포넌트 분리하면될듯 우선?
+// 헤더 컴포넌트인데 코드 리팩토링 필요함.. 흠 어떻게 해야할지....사이드바 컴포넌트 분리하면될듯 우선?
+// 헤더 컴포넌트인데 코드 리팩토링 필요함.. 흠 어떻게 해야할지....사이드바 컴포넌트 분리하면될듯 우선?
+// 헤더 컴포넌트인데 코드 리팩토링 필요함.. 흠 어떻게 해야할지....사이드바 컴포넌트 분리하면될듯 우선?
 export default function Header() {
   const [theme, setTheme] = useState<"dark" | "light">("light");
   const [isOpen, setIsOpen] = useState(false);
@@ -55,16 +59,16 @@ export default function Header() {
           <button className="md:hidden w-[20px] h-[20px] z-[11] relative flex items-center justify-center" onClick={() => setIsOpen(!isOpen)}>
             <div className="flex flex-col justify-center items-center gap-[5px]">
               <span
-                className={`bg-current w-5 h-[1.5px] transition-all duration-300 ease-in-out origin-center
-                  ${isOpen ? "rotate-45 translate-y-[6px]" : ""}`}
+                className={`dark:bg-white bg-black w-5 h-[1.5px] transition-all duration-300 ease-in-out origin-center
+                  ${isOpen ? "rotate-50 translate-y-[6px]" : ""}`}
               />
               <span
-                className={`bg-current w-5 h-[1.5px] transition-all duration-300 ease-in-out
+                className={`dark:bg-white bg-black w-5 h-[1.5px] transition-all duration-300 ease-in-out
                   ${isOpen ? "opacity-0" : "opacity-100"}`}
               />
               <span
-                className={`bg-current w-5 h-[1.5px] transition-all duration-300 ease-in-out origin-center
-                  ${isOpen ? "-rotate-45 translate-y-[-6px]" : ""}`}
+                className={`dark:bg-white bg-black w-5 h-[1.5px] transition-all duration-300 ease-in-out origin-center
+                  ${isOpen ? "-rotate-50 translate-y-[-6px]" : ""}`}
               />
             </div>
           </button>
@@ -74,11 +78,7 @@ export default function Header() {
       {/* 사이드 메뉴 오버레이 */}
       <div className={`fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300 z-[10] md:hidden ${isOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`} onClick={() => setIsOpen(false)}>
         <div className={`fixed top-0 right-0 h-full w-64 bg-light-bg dark:bg-dark-bg shadow-lg transform transition-transform duration-300 z-[1000] ${isOpen ? "translate-x-0" : "translate-x-full"}`} onClick={(e) => e.stopPropagation()}>
-          <div className="p-4 flex justify-between items-center border-b border-light-border dark:border-dark-border">
-            <Typography variant="body.100_sb">메뉴</Typography>
-          </div>
-
-          <div className="p-4 space-y-4">
+          <div className="p-4 space-y-4 mt-[60px]">
             <div onClick={() => handleNavigation("/resume")} className="cursor-pointer">
               <Typography variant="body.100" className="block py-2 hover:bg-light-bg-1 dark:hover:bg-dark-bg-1 rounded px-2">
                 Resume
@@ -94,16 +94,16 @@ export default function Header() {
                 toggleTheme();
                 setIsOpen(false);
               }}
-              className="w-full flex items-center py-2 hover:bg-light-bg-1 dark:hover:bg-dark-bg-1 rounded px-2"
+              className="w-full flex items-center py-2 hover:bg-light-bg-1 dark:hover:bg-dark-bg-1 rounded px-1"
             >
-              <Typography variant="body.100" className="flex items-center gap-2">
+              <Typography variant="body.100" className="flex items-center">
                 {theme === "dark" ? (
                   <>
-                    <LightModeIcon width={16} height={16} fill="white" /> 라이트 모드
+                    <LightModeIcon width={16} height={16} fill="white" />
                   </>
                 ) : (
                   <>
-                    <DarkModeIcon width={16} height={16} fill="black" /> 다크 모드
+                    <DarkModeIcon width={16} height={16} fill="black" />
                   </>
                 )}
               </Typography>
