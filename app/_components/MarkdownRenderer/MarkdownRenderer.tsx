@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
+import { useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 import { Typography } from "../Typography/Typography";
 import Image from "next/image";
@@ -17,6 +18,30 @@ interface MarkdownRendererProps {
  * @returns
  */
 const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, slug }) => {
+  useEffect(() => {
+    const headings = document.querySelectorAll(".heading-text"); // 클래스 선택자 변경
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("highlight");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "-45% 0px -45% 0px",
+        threshold: 0,
+      }
+    );
+
+    headings.forEach((heading) => observer.observe(heading));
+
+    return () => observer.disconnect();
+  }, [content]);
+
   const components = {
     h1: ({ children, ...props }: any) => {
       const id = children
@@ -25,7 +50,7 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, slug }) =>
         .replace(/[^a-zA-Z0-9]+/g, "-");
       return (
         <Typography variant="headline.100" {...props} id={id} className="mt-[40px] mb-[5px]">
-          {children}
+          <span className="heading-text relative inline-block">{children}</span>
         </Typography>
       );
     },
@@ -36,7 +61,7 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, slug }) =>
         .replace(/[^a-zA-Z0-9]+/g, "-");
       return (
         <Typography variant="headline.200" {...props} id={id} className="mt-[30px] mb-[5px]">
-          {children}
+          <span className="heading-text relative inline-block">{children}</span>
         </Typography>
       );
     },
@@ -109,8 +134,36 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, slug }) =>
       return <Image src={imageSrc} alt={alt} width={500} height={350} layout="responsive" />;
     },
   };
-  return <ReactMarkdown components={components}>{content}</ReactMarkdown>;
+
+  return (
+    <>
+      <style jsx global>{`
+        .heading-text::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 25%;
+          transform: rotate(-1.5deg);
+          width: 0;
+          height: 50%; /* 형광펜 두께 조절 */
+          background-color: rgba(255, 255, 0, 0.3);
+          z-index: -1;
+          transition: width 1s ease-out;
+        }
+
+        .dark .heading-text::before {
+          background-color: rgba(255, 255, 0, 0.15);
+        }
+
+        .heading-text.highlight::before {
+          width: 100%;
+        }
+      `}</style>
+      <ReactMarkdown components={components}>{content}</ReactMarkdown>
+    </>
+  );
 };
+
 export default MarkdownRenderer;
 
 /**
