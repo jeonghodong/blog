@@ -25,7 +25,7 @@ const page = () => {
   return (
     <div className="h-[100%] w-[100%] p-[24px]">
       <div className="flex">
-        <Typography variant="headline.200" className="text-center my-[16px]">
+        <Typography variant="headline.200" className="text-center">
           About
         </Typography>
       </div>
