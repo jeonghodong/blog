@@ -9,6 +9,9 @@ export const SITE_CONFIG = {
 };
 
 export const DEFAULT_METADATA: Metadata = {
+  verification: {
+    google: "bgB4JW8glK8msaOSEyjt5lj2m42rH7foKqPyTx9ljSc",
+  },
   title: {
     default: SITE_CONFIG.title,
     template: `%s | ${SITE_CONFIG.title}`,
