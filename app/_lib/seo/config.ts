@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 export const SITE_CONFIG = {
-  title: "경계없는 개발 이야기",
-  description: "기술과 창의성이 만나는 곳, 개발을 넘어선 새로운 이야기를 시작합니다.",
+  title: "생각이 존재하는 곳",
+  description: "개발과 일상의 경계를 허물며 기록하는 공간",
   url: "https://jeonghodong.com",
   author: "정호동",
   language: "ko-KR",
@@ -42,7 +42,6 @@ export const DEFAULT_METADATA: Metadata = {
     index: true,
     follow: true,
   },
-  // 아이콘 설정 통합
   icons: {
     icon: [{ url: "/images/favicon.ico" }, { url: "/images/favicon-16x16.png", sizes: "16x16", type: "image/png" }, { url: "/images/favicon-32x32.png", sizes: "32x32", type: "image/png" }],
     apple: [{ url: "/images/apple-touch-icon.png" }],

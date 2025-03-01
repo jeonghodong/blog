@@ -1,7 +1,7 @@
 import "./_styles/globals.css";
 
 import Header from "./_components/Header/Header";
-import { DEFAULT_METADATA } from "./_constants/metadata";
+import { DEFAULT_METADATA } from "./_lib/seo/config";
 
 export const metadata = DEFAULT_METADATA;
 

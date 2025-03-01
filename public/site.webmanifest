@@ -1,6 +1,6 @@
 {
-  "name": "경계없는 개발 이야기",
-  "short_name": "경계없는 개발 이야기",
+  "name": "생각이 존재하는 곳",
+  "short_name": "생각이 존재하는 곳",
   "icons": [
     { "src": "/images/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
     { "src": "/images/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
