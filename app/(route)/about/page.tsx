@@ -62,7 +62,7 @@ const page = () => {
             Hodong
           </Typography>
           <Typography variant="body.200" className="mb-[8px]">
-            생각의 경계를 허물며 코드와 글로 세상과 소통합니다.
+            읽기 좋은 글을 쓰기 위해
           </Typography>
 
           {/* 소셜 버튼 영역 */}
