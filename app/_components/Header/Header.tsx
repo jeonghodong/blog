@@ -6,6 +6,7 @@ import LightModeIcon from "@/app/_assets/icons/ic_light_mode.svg";
 import { useRouter } from "next/navigation";
 import { useEffect, useState, useRef } from "react";
 import { Typography } from "../Typography/Typography";
+import ScrollProgressBar from "./_components/ScrollProgressBar";
 
 // 헤더 컴포넌트인데 코드 리팩토링 필요함.. 흠 어떻게 해야할지....사이드바 컴포넌트 분리하면될듯 우선?
 export default function Header() {
@@ -123,6 +124,8 @@ export default function Header() {
           </button>
         </div>
       </div>
+
+      <ScrollProgressBar />
 
       {/* 사이드 메뉴 오버레이 */}
       <div className={`fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300 z-[10] md:hidden ${isOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`} onClick={() => setIsOpen(false)}>
