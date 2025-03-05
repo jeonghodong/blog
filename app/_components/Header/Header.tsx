@@ -3,8 +3,8 @@
 
 import DarkModeIcon from "@/app/_assets/icons/ic_dark_mode.svg";
 import LightModeIcon from "@/app/_assets/icons/ic_light_mode.svg";
-import { useRouter } from "next/navigation";
-import { useEffect, useState, useRef } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 import { Typography } from "../Typography/Typography";
 import ScrollProgressBar from "./_components/ScrollProgressBar";
 
@@ -13,10 +13,14 @@ export default function Header() {
   const [theme, setTheme] = useState<"dark" | "light">("light");
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
+  const pathname = usePathname();
   const [displayText, setDisplayText] = useState("");
   const [isTyping, setIsTyping] = useState(true);
   const [hasTyped, setHasTyped] = useState(false);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+  const lastScrollY = useRef(0);
+  const isResumePage = pathname === "/resume";
 
   const fullText = "Thoughts, Being";
 
@@ -60,6 +64,32 @@ export default function Header() {
     };
   }, []); // 의존성 배열이 비어있어 컴포넌트가 마운트될 때만 실행
 
+  // 스크롤 이벤트 처리 - Resume 페이지에서만 작동
+  useEffect(() => {
+    if (!isResumePage) {
+      setIsHeaderVisible(true);
+      return;
+    }
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // 스크롤 방향 감지
+      if (currentScrollY > lastScrollY.current && currentScrollY > 0) {
+        // 아래로 스크롤 - 헤더 숨기기
+        setIsHeaderVisible(false);
+      } else {
+        // 위로 스크롤 - 헤더 보이기
+        setIsHeaderVisible(true);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isResumePage]);
+
   const toggleTheme = () => {
     const newTheme = theme === "dark" ? "light" : "dark";
     setTheme(newTheme);
@@ -78,7 +108,15 @@ export default function Header() {
 
   return (
     <>
-      <div className="flex justify-center items-center h-[60px] bg-light-bg dark:bg-dark-bg border-b border-light-border dark:border-dark-border w-full mb-[40px] fixed top-0 z-40">
+      {/* 프로그레스 바는 항상 최상단에 위치 */}
+      <div className="fixed top-0 left-0 right-0 z-50">
+        <ScrollProgressBar />
+      </div>
+
+      <div
+        className={`flex justify-center items-center h-[60px] bg-light-bg dark:bg-dark-bg border-b border-light-border dark:border-dark-border w-full fixed z-40 transition-transform duration-300 ${isResumePage && !isHeaderVisible ? "-translate-y-full" : "translate-y-0"}`}
+        style={{ top: isResumePage ? "0" : "0" }}
+      >
         <div className="flex justify-between items-center w-full px-[5%]">
           <Typography variant="caption.100" className="cursor-pointer select-none font-mono" onClick={() => handleNavigation("/")}>
             🧑🏻‍💻 <span className="text-gray-800 dark:text-gray-200">import</span> <span className="text-gray-500 dark:text-gray-400">{"{"}</span>
@@ -124,8 +162,6 @@ export default function Header() {
           </button>
         </div>
       </div>
-
-      <ScrollProgressBar />
 
       {/* 사이드 메뉴 오버레이 */}
       <div className={`fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300 z-[10] md:hidden ${isOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`} onClick={() => setIsOpen(false)}>
