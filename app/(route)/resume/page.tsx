@@ -12,7 +12,7 @@ const page = () => {
     <div className="min-h-screen py-10 px-4 md:px-6 max-w-7xl mx-auto">
       {/* 헤더 부분 */}
       <div className="mb-12 text-center">
-        <Typography variant="headline.100" className="mb-3">
+        <Typography variant="headline.100" className="mb-8">
           {resumeData.header.title}
         </Typography>
         <Typography variant="body.100" className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto whitespace-pre-line">
