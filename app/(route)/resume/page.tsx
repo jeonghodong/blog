@@ -21,28 +21,28 @@ const page = () => {
       </div>
 
       {/* 경력 섹션 */}
-      <div className="mb-16">
+      <section className="mb-16">
         <Typography variant="headline.200" className="mb-8 pb-2 border-b border-gray-200 dark:border-gray-700">
           경력
         </Typography>
         <ProjectSection sectionData={resumeData.experiences} sectionId="experience" />
-      </div>
+      </section>
 
       {/* 사이드 프로젝트 섹션 */}
-      <div className="mb-16">
+      <section className="mb-16">
         <Typography variant="headline.200" className="mb-8 pb-2 border-b border-gray-200 dark:border-gray-700">
           사이드 프로젝트
         </Typography>
         <ProjectSection sectionData={resumeData.sideProjects} sectionId="sideProject" />
-      </div>
+      </section>
 
       {/* 스킬 섹션 */}
-      <div className="mb-16">
+      <section className="mb-16">
         <Typography variant="headline.200" className="mb-8 pb-2 border-b border-gray-200 dark:border-gray-700">
           기술 스택
         </Typography>
         <SkillSection skillData={resumeData.skills} />
-      </div>
+      </section>
     </div>
   );
 };

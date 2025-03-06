@@ -164,7 +164,7 @@ export default function Header() {
       </div>
 
       {/* 사이드 메뉴 오버레이 */}
-      <div className={`fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300 z-[10] md:hidden ${isOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`} onClick={() => setIsOpen(false)}>
+      <div className={`fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300 z-[99] md:hidden ${isOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`} onClick={() => setIsOpen(false)}>
         <div className={`fixed top-0 right-0 h-full w-64 bg-light-bg dark:bg-dark-bg shadow-lg transform transition-transform duration-300 z-[1000] ${isOpen ? "translate-x-0" : "translate-x-full"}`} onClick={(e) => e.stopPropagation()}>
           <div className="p-4 space-y-4 mt-[60px]">
             <div onClick={() => handleNavigation("/about")} className="cursor-pointer">
