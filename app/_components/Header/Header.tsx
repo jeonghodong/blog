@@ -109,12 +109,12 @@ export default function Header() {
   return (
     <>
       {/* 프로그레스 바는 항상 최상단에 위치 */}
-      <div className="fixed top-0 left-0 right-0 z-50">
+      <div className="fixed top-0 left-0 right-0 z-100">
         <ScrollProgressBar />
       </div>
 
       <div
-        className={`flex justify-center items-center h-[60px] bg-light-bg dark:bg-dark-bg border-b border-light-border dark:border-dark-border w-full fixed z-40 transition-transform duration-300 ${isResumePage && !isHeaderVisible ? "-translate-y-full" : "translate-y-0"}`}
+        className={`flex justify-center items-center h-[60px] bg-light-bg dark:bg-dark-bg border-b border-light-border dark:border-dark-border w-full fixed z-[101] transition-transform duration-300 ${isResumePage && !isHeaderVisible ? "-translate-y-full" : "translate-y-0"}`}
         style={{ top: isResumePage ? "0" : "0" }}
       >
         <div className="flex justify-between items-center w-full px-[5%]">
@@ -164,8 +164,8 @@ export default function Header() {
       </div>
 
       {/* 사이드 메뉴 오버레이 */}
-      <div className={`fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300 z-[99] md:hidden ${isOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`} onClick={() => setIsOpen(false)}>
-        <div className={`fixed top-0 right-0 h-full w-64 bg-light-bg dark:bg-dark-bg shadow-lg transform transition-transform duration-300 z-[1000] ${isOpen ? "translate-x-0" : "translate-x-full"}`} onClick={(e) => e.stopPropagation()}>
+      <div className={`fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300 z-[100] md:hidden ${isOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`} onClick={() => setIsOpen(false)}>
+        <div className={`fixed top-0 right-0 h-full w-64 bg-light-bg dark:bg-dark-bg shadow-lg transform transition-transform duration-300 z-[100] ${isOpen ? "translate-x-0" : "translate-x-full"}`} onClick={(e) => e.stopPropagation()}>
           <div className="p-4 space-y-4 mt-[60px]">
             <div onClick={() => handleNavigation("/about")} className="cursor-pointer">
               <Typography variant="body.100" className="block py-2 hover:bg-light-bg-1 dark:hover:bg-dark-bg-1 rounded px-2">
