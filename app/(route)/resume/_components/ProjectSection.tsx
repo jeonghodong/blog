@@ -93,7 +93,7 @@ export default function ProjectSection({ sectionData, sectionId }: SectionProps)
                   activeProject?.sectionId === sectionId && //
                   activeProject?.expIndex === expIndex && //
                   activeProject?.projIndex === projIndex //
-                    ? "border-l-4 border-primary dark:border-primary-4 translate-x-1"
+                    ? "border-l-2 border-primary dark:border-primary-4 translate-x-2"
                     : "border-gray-200 dark:border-gray-700"
                 }`}
                 ref={(el) => {
