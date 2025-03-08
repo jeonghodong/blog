@@ -53,11 +53,13 @@ export default function SkillSection({ skillData }: SkillSectionProps) {
                 <ul className="space-y-4">
                   {detail.description.map((desc, descIndex) => (
                     <li key={descIndex} className="flex items-start">
-                      <div className="min-w-[6px] h-[6px] rounded-full bg-pink-500 mt-2 mr-3"></div>
+                      <div className="min-w-[6px] h-[6px] rounded-full bg-primary dark:bg-primary-4 mt-2 mr-3" />
+
                       <div>
                         <Typography variant="body.100_sb" className="text-gray-700 dark:text-gray-300">
                           {desc}
                         </Typography>
+
                         {detail.additionalInfo && detail.additionalInfo[descIndex] && (
                           <Typography variant="body.201" className="text-gray-500 dark:text-gray-400 mt-1 ml-1 font-thin">
                             {detail.additionalInfo[descIndex]}
