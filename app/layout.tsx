@@ -1,4 +1,5 @@
 import "./_styles/globals.css";
+import "./_styles/reset.css";
 
 import Header from "./_components/Header/Header";
 import { DEFAULT_METADATA } from "./_lib/seo/config";
