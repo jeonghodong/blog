@@ -85,15 +85,15 @@ export default function ProjectSection({ sectionData, sectionId }: SectionProps)
           </div>
 
           {/* 오른쪽 스크롤 영역 (프로젝트 상세) */}
-          <div className="md:col-span-9">
+          <div className="md:col-span-9 overflow-x-hidden">
             {experience.projects.map((project, projIndex) => (
               <div
                 key={projIndex}
-                className={`border-l-2 pl-6 pb-8 mb-12 transition-all duration-500 ${
+                className={`border-l-2 pl-4 md:pl-6 pb-8 mb-12 transition-all duration-500 ${
                   activeProject?.sectionId === sectionId && //
                   activeProject?.expIndex === expIndex && //
                   activeProject?.projIndex === projIndex //
-                    ? "border-l-2 border-primary dark:border-primary-4 translate-x-2"
+                    ? "border-l-2 border-primary dark:border-primary-4 translate-x-1 md:translate-x-2"
                     : "border-gray-200 dark:border-gray-700"
                 }`}
                 ref={(el) => {
