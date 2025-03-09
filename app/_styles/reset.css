@@ -141,3 +141,41 @@ a:visited {
   color: inherit;
   text-decoration: none;
 }
+
+/* 스크롤바 커스텀 스타일 */
+::-webkit-scrollbar {
+  width: 3.6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9ca3af;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+/* 다크 모드에서의 스크롤바 */
+.dark ::-webkit-scrollbar-thumb {
+  background: #4b5563;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+body {
+  width: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: #9ca3af transparent;
+}
+
+.dark body {
+  scrollbar-color: #4b5563 transparent;
+}
