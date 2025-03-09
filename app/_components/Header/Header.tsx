@@ -20,6 +20,7 @@ export default function Header() {
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
   const lastScrollY = useRef(0);
+  const scrollThreshold = 50; // 스크롤 임계값 - 이 값을 높이면 헤더가 나타나기 위해 더 많이 스크롤해야 함
   const isResumePage = pathname === "/resume";
 
   const fullText = "Thoughts, Being";
@@ -74,12 +75,12 @@ export default function Header() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // 스크롤 방향 감지
+      // 아래로 스크롤 - 헤더 숨기기 (기존과 동일)
       if (currentScrollY > lastScrollY.current && currentScrollY > 0) {
-        // 아래로 스크롤 - 헤더 숨기기
         setIsHeaderVisible(false);
-      } else {
-        // 위로 스크롤 - 헤더 보이기
+      }
+      // 위로 스크롤 - 임계값 이상 스크롤해야 헤더 보이기
+      else if (lastScrollY.current - currentScrollY > scrollThreshold) {
         setIsHeaderVisible(true);
       }
 
