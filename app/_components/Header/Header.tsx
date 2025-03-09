@@ -108,10 +108,7 @@ export default function Header() {
 
   return (
     <>
-      {/* 프로그레스 바는 항상 최상단에 위치 */}
-      <div className="fixed top-0 left-0 right-0 z-100">
-        <ScrollProgressBar />
-      </div>
+      <ScrollProgressBar />
 
       <div
         className={`flex justify-center items-center h-[60px] bg-light-bg dark:bg-dark-bg border-b border-light-border dark:border-dark-border w-full fixed z-[101] transition-transform duration-300 ${isResumePage && !isHeaderVisible ? "-translate-y-full" : "translate-y-0"}`}

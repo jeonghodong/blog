@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import { usePathname } from "next/navigation";
@@ -35,7 +36,7 @@ export default function ScrollProgressBar() {
   }, []);
 
   return (
-    <div className={`fixed left-0 w-full h-[2.6px] bg-gray-200 dark:bg-dark-bg-1 z-50 transition-opacity duration-200 ${isScrolled ? "opacity-100" : "opacity-0"}`}>
+    <div className={`fixed left-0 w-full h-[2.6px] bg-gray-200 dark:bg-gray-700 z-[102] duration-200`}>
       <div className="h-full bg-primary dark:bg-primary-4 transition-all duration-100 ease-out" style={{ width: `${width}%` }} />
     </div>
   );
