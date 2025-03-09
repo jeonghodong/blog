@@ -26,8 +26,8 @@ export default async function Page({ params }: { params: { id: string } }) {
       <div className="flex justify-between">
         <div className="w-full lg:w-[700px]">
           {/* Image */}
-          <div className="relative w-full h-[400px] mt-[36px]">
-            <Image src={thumbnail} alt={title} fill className="rounded-[12px]" />
+          <div className="relative w-full h-[250px] md:h-[400px] mt-[36px]">
+            <Image src={thumbnail} alt={title} fill className="rounded-[12px] object-cover" />
           </div>
 
           {/* Title */}
