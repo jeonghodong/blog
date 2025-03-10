@@ -2,6 +2,7 @@
 
 import { Typography } from "@/app/_components/Typography/Typography";
 import { useEffect, useRef, useState } from "react";
+import React from "react";
 
 interface Project {
   title: string;
@@ -85,7 +86,7 @@ export default function ProjectSection({ sectionData, sectionId }: SectionProps)
           </div>
 
           {/* 오른쪽 스크롤 영역 (프로젝트 상세) */}
-          <div className="md:col-span-9 overflow-x-hidden">
+          <div className="md:col-span-9">
             {experience.projects.map((project, projIndex) => (
               <div
                 key={projIndex}
@@ -115,7 +116,7 @@ export default function ProjectSection({ sectionData, sectionId }: SectionProps)
                     <Typography variant="body.200_sb" className="mb-2">
                       Description.
                     </Typography>
-                    <Typography variant="body.100" className="text-gray-700 dark:text-gray-300">
+                    <Typography variant="body.100" className="text-gray-700 dark:text-gray-300 whitespace-pre-line">
                       - {project.description}
                     </Typography>
                   </div>
@@ -126,7 +127,7 @@ export default function ProjectSection({ sectionData, sectionId }: SectionProps)
                     </Typography>
                     <div className="text-gray-700 dark:text-gray-300">
                       {project.contributions.map((contribution, contIndex) => (
-                        <Typography key={contIndex} variant="body.100" className="mb-1">
+                        <Typography key={contIndex} variant="body.100" className="mb-1 whitespace-pre-line">
                           - {contribution}
                         </Typography>
                       ))}
