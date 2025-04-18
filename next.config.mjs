@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["localhost"], // 개발 환경을 위한 설정
+    domains: ["localhost", "d2y4kcl4gu8ysz.cloudfront.net"], // 개발 환경을 위한 설정
+
     remotePatterns: [
       {
         protocol: "https",

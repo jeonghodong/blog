@@ -135,6 +135,9 @@ export default function Header() {
               <Typography variant="body.100" color="DEFAULT" className="cursor-pointer select-none" onClick={() => handleNavigation("/resume")}>
                 Resume
               </Typography>
+              <Typography variant="body.100" color="DEFAULT" className="cursor-pointer select-none" onClick={() => handleNavigation("/photos")}>
+                Gallery
+              </Typography>
             </div>
             <button onClick={toggleTheme} className="p-2 transition-colors" aria-label="테마 변경">
               {theme === "dark" ? <DarkModeIcon width={24} height={24} fill="white" /> : <LightModeIcon width={24} height={24} fill="black" />}
@@ -175,6 +178,12 @@ export default function Header() {
                 Resume
               </Typography>
             </div>
+            <div onClick={() => handleNavigation("/photos")} className="cursor-pointer">
+              <Typography variant="body.100" className="block py-2 hover:bg-light-bg-1 dark:hover:bg-dark-bg-1 rounded px-2">
+                Gallery
+              </Typography>
+            </div>
+
             <button
               onClick={() => {
                 toggleTheme();
