@@ -106,9 +106,23 @@ const PhotoGallery = () => {
         ],
       },
       {
+        title: "Busan Changbi",
+        imageCount: 7,
+        coverImage: "/photos/busan/busan-changbi2",
+        images: [
+          "/photos/busan/busan-changbi1", //
+          "/photos/busan/busan-changbi2",
+          "/photos/busan/busan-changbi3",
+          "/photos/busan/busan-changbi4",
+          "/photos/busan/busan-changbi5",
+          "/photos/busan/busan-changbi6",
+          "/photos/busan/busan-changbi7",
+        ],
+      },
+      {
         title: "Black and White",
         imageCount: 6,
-        coverImage: "/photos/black-and-white/black-and-white5",
+        coverImage: "/photos/black-and-white/black-and-white7",
         images: [
           "/photos/black-and-white/black-and-white1", //
           "/photos/black-and-white/black-and-white2",
@@ -116,15 +130,17 @@ const PhotoGallery = () => {
           "/photos/black-and-white/black-and-white4",
           "/photos/black-and-white/black-and-white5",
           "/photos/black-and-white/black-and-white6",
+          "/photos/black-and-white/black-and-white7",
         ],
       },
       {
         title: "Friend",
-        imageCount: 2,
+        imageCount: 3,
         coverImage: "/photos/friend/friend1",
         images: [
           "/photos/friend/friend1", //
           "/photos/friend/friend2",
+          "/photos/friend/friend3",
         ],
       },
     ],
