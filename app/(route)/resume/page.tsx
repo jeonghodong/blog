@@ -1,4 +1,4 @@
-import { Typography } from "@/app/_components/Typography/Typography";
+import { Typography } from "@/app/_components/Typography";
 import { createPageMetadata } from "@/app/_lib/seo/metadata";
 import { Metadata } from "next";
 import ProjectSection from "./_components/ProjectSection";

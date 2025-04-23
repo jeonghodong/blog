@@ -10,6 +10,17 @@ type VariantKey =
   | "gnb_off"
   | "btn";
 
+type ColorKey = "DEFAULT" | "1" | "2" | "3";
+
+export interface TypographyProps {
+  variant: VariantKey;
+  children: React.ReactNode;
+  className?: string;
+  color?: ColorKey;
+  id?: string; // id prop 추가
+  onClick?: () => void;
+}
+
 const variants: Record<VariantKey, string> = {
   "headline.100": "text-[24px] md:text-[42px] font-bold tracking-[-0.5px]",
   "headline.200": "text-[22px] md:text-[36px] font-semibold tracking-[-0.5px]",
@@ -81,17 +92,6 @@ const lineHeights: Record<VariantKey, string> = {
   gnb_off: "leading-[14px]",
   btn: "leading-[26px]",
 };
-
-type ColorKey = "DEFAULT" | "1" | "2" | "3";
-
-export interface TypographyProps {
-  variant: VariantKey;
-  children: React.ReactNode;
-  className?: string;
-  color?: ColorKey;
-  id?: string; // id prop 추가
-  onClick?: () => void;
-}
 
 function classNames(...classes: (string | undefined)[]) {
   return classes.filter(Boolean).join(" ");

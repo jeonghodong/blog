@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Metadata, ResolvingMetadata } from "next";
 import { DEFAULT_METADATA, SITE_CONFIG } from "./config";
-import { PostData } from "../posts";
+import { PostData } from "../types";
 
 /**
  * 정적 페이지 메타데이터 생성 함수

@@ -1,17 +1,8 @@
 "use client";
 
-import { Typography } from "../Typography/Typography";
+import { Typography } from "../Typography";
 import { useEffect, useState } from "react";
-
-interface TocItem {
-  id: string;
-  text: string;
-  level: number;
-}
-
-interface TableOfContentsProps {
-  content: string;
-}
+import { TableOfContentsProps, TocItem } from "./types";
 
 export default function TableOfContents({ content }: TableOfContentsProps) {
   const [headings, setHeadings] = useState<TocItem[]>([]);

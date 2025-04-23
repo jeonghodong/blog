@@ -1,4 +1,4 @@
-import BlogWrapper from "./_components/BlogWrapper/BlogWrapper";
+import BlogWrapper from "./_components/BlogWrapper";
 import { getAllPosts } from "./_lib/posts";
 
 export default async function Home() {

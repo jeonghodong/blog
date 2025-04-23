@@ -5,8 +5,8 @@ import DarkModeIcon from "@/app/_assets/icons/ic_dark_mode.svg";
 import LightModeIcon from "@/app/_assets/icons/ic_light_mode.svg";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { Typography } from "../Typography/Typography";
-import ScrollProgressBar from "./_components/ScrollProgressBar";
+import { Typography } from "../Typography";
+import ScrollProgressBar from "./ScrollProgressBar";
 
 // 헤더 컴포넌트인데 코드 리팩토링 필요함.. 흠 어떻게 해야할지....사이드바 컴포넌트 분리하면될듯 우선?
 export default function Header() {

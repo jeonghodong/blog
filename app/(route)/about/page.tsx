@@ -1,4 +1,4 @@
-import { Typography } from "@/app/_components/Typography/Typography";
+import { Typography } from "@/app/_components/Typography";
 import React from "react";
 import GithubLogo from "@/app/_assets/icons/GithubIcon";
 import LinkedinLogo from "@/app/_assets/icons/LinkedinLogo";

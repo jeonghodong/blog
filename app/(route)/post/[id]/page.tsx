@@ -1,12 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Metadata, ResolvingMetadata } from "next";
-import MarkdownRenderer from "@/app/_components/MarkdownRenderer/MarkdownRenderer";
-import TableOfContents from "@/app/_components/TableOfContents/TableOfContents";
-import { Typography } from "@/app/_components/Typography/Typography";
-import { getPostData, PostData } from "@/app/_lib/posts";
+import MarkdownRenderer from "@/app/_components/MarkdownRenderer";
+import TableOfContents from "@/app/_components/TableOfContents";
+import { Typography } from "@/app/_components/Typography";
+import { getPostData } from "@/app/_lib/posts";
 import { formatDate } from "@/app/_utils/date";
 import Image from "next/image";
 import { createPostMetadata } from "@/app/_lib/seo/metadata";
+import { PostData } from "@/app/_lib/types";
 
 export async function generateMetadata({ params }: { params: { id: string } }, parent: ResolvingMetadata): Promise<Metadata> {
   const { id } = params;

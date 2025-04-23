@@ -1,9 +1,9 @@
 "use client";
 
-import { PostData } from "@/app/_lib/posts";
 import { useState } from "react";
-import PostList from "../PostList/PostList";
-import Sidebar from "../SideBar/SideBar";
+import Sidebar from "../SideBar";
+import { PostData } from "@/app/_lib/types";
+import PostList from "../PostList";
 
 interface BlogWrapperProps {
   posts: PostData[];

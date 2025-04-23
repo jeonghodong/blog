@@ -4,7 +4,7 @@
 "use client";
 import { useEffect } from "react";
 import ReactMarkdown from "react-markdown";
-import { Typography } from "../Typography/Typography";
+import { Typography } from "../Typography";
 import Image from "next/image";
 
 interface MarkdownRendererProps {

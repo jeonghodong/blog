@@ -1,14 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { Typography } from "../Typography/Typography";
-import { PostData } from "@/app/_lib/posts";
-
-interface SidebarProps {
-  posts: PostData[];
-  selectedTags: string[];
-  onTagToggle: (tag: string) => void;
-}
+import { Typography } from "../Typography";
+import { SidebarProps } from "./types";
 
 export default function Sidebar({ posts, selectedTags, onTagToggle }: SidebarProps) {
   const allTags = Array.from(new Set(posts.flatMap((post) => post.tags)));

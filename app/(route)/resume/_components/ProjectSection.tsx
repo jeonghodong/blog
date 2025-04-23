@@ -1,6 +1,6 @@
 "use client";
 
-import { Typography } from "@/app/_components/Typography/Typography";
+import { Typography } from "@/app/_components/Typography";
 import { useEffect, useRef, useState } from "react";
 import React from "react";
 

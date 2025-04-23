@@ -1,6 +1,6 @@
 "use client";
 
-import { Typography } from "@/app/_components/Typography/Typography";
+import { Typography } from "@/app/_components/Typography";
 import { useState } from "react";
 
 interface SkillDetail {
