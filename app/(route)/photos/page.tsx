@@ -120,8 +120,47 @@ const PhotoGallery = () => {
         ],
       },
       {
+        title: "Busan Onchenjang",
+        imageCount: 18,
+        coverImage: "/photos/busan/busan-oncheonjang16",
+        images: [
+          "/photos/busan/busan-oncheonjang1", //
+          "/photos/busan/busan-oncheonjang2",
+          "/photos/busan/busan-oncheonjang3",
+          "/photos/busan/busan-oncheonjang4",
+          "/photos/busan/busan-oncheonjang5",
+          "/photos/busan/busan-oncheonjang6",
+          "/photos/busan/busan-oncheonjang7",
+          "/photos/busan/busan-oncheonjang8",
+          "/photos/busan/busan-oncheonjang9",
+          "/photos/busan/busan-oncheonjang10",
+          "/photos/busan/busan-oncheonjang11",
+          "/photos/busan/busan-oncheonjang12",
+          "/photos/busan/busan-oncheonjang13",
+          "/photos/busan/busan-oncheonjang14",
+          "/photos/busan/busan-oncheonjang15",
+          "/photos/busan/busan-oncheonjang16",
+          "/photos/busan/busan-oncheonjang17",
+          "/photos/busan/busan-oncheonjang18",
+        ],
+      },
+      {
+        title: "Busan Home Loof",
+        imageCount: 7,
+        coverImage: "/photos/busan/busan-home-loof1",
+        images: [
+          "/photos/busan/busan-home-loof1", //
+          "/photos/busan/busan-home-loof2",
+          "/photos/busan/busan-home-loof3",
+          "/photos/busan/busan-home-loof4",
+          "/photos/busan/busan-home-loof5",
+          "/photos/busan/busan-home-loof6",
+          "/photos/busan/busan-home-loof7",
+        ],
+      },
+      {
         title: "Black and White",
-        imageCount: 6,
+        imageCount: 8,
         coverImage: "/photos/black-and-white/black-and-white7",
         images: [
           "/photos/black-and-white/black-and-white1", //
@@ -131,16 +170,16 @@ const PhotoGallery = () => {
           "/photos/black-and-white/black-and-white5",
           "/photos/black-and-white/black-and-white6",
           "/photos/black-and-white/black-and-white7",
+          "/photos/black-and-white/black-and-white8",
         ],
       },
       {
         title: "Friend",
-        imageCount: 3,
+        imageCount: 2,
         coverImage: "/photos/friend/friend1",
         images: [
           "/photos/friend/friend1", //
           "/photos/friend/friend2",
-          "/photos/friend/friend3",
         ],
       },
     ],

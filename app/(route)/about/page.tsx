@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Typography } from "@/app/_components/Typography";
 import React from "react";
 import GithubLogo from "@/app/_assets/icons/GithubIcon";
 import LinkedinLogo from "@/app/_assets/icons/LinkedinLogo";
+import InstagramLogo from "@/app/_assets/icons/InstagramIcon";
 import Image from "next/image";
 import profileImage from "@/app/_assets/images/profile.jpeg";
 import { Metadata } from "next";
@@ -20,6 +22,36 @@ const content = [
     description: ["머릿속 생각들이 너무 시끄러우면 밖으로 좀 내보내려고요.", "코드 뿐 만 아니라 글도 적다보면 뭐든 꽤 그럴듯한 것들이 나오더군요. 😃"],
   },
 ];
+
+const socialLinks = [
+  {
+    href: "https://www.instagram.com/jeonghodong/",
+    icon: InstagramLogo,
+    label: "Instagram",
+  },
+  {
+    href: "https://github.com/jeonghodong",
+    icon: GithubLogo,
+    label: "GitHub",
+  },
+  {
+    href: "https://www.linkedin.com/in/hodong-jeong-632353270/",
+    icon: LinkedinLogo,
+    label: "LinkedIn",
+  },
+];
+
+interface SocialLinkProps {
+  href: string;
+  icon: React.ComponentType<{ width: number; height: number; className: string }>;
+  label: string;
+}
+
+const SocialLink = ({ href, icon: Icon, label }: SocialLinkProps) => (
+  <Link href={href} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:opacity-80 transition-opacity">
+    <Icon width={32} height={32} className="text-gray-800 dark:text-white fill-current" />
+  </Link>
+);
 
 const page = () => {
   return (
@@ -67,12 +99,9 @@ const page = () => {
 
           {/* 소셜 버튼 영역 */}
           <div className="flex gap-3 mt-[12px] items-center">
-            <Link href="https://github.com/jeonghodong" target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:opacity-80 transition-opacity">
-              <GithubLogo width={32} height={32} className="text-gray-800 dark:text-white fill-current" />
-            </Link>
-            <Link href="https://www.linkedin.com/in/hodong-jeong-632353270/" target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:opacity-80 transition-opacity">
-              <LinkedinLogo width={32} height={32} className="text-gray-800 dark:text-white fill-current" />
-            </Link>
+            {socialLinks.map((link) => (
+              <SocialLink key={link.label} {...link} />
+            ))}
           </div>
         </div>
       </div>
