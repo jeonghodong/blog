@@ -25,7 +25,7 @@ const content = [
 
 const socialLinks = [
   {
-    href: "https://www.instagram.com/jeonghodong/",
+    href: "https://www.instagram.com/hodoi_i/",
     icon: InstagramLogo,
     label: "Instagram",
   },
