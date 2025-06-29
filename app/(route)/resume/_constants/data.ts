@@ -77,6 +77,20 @@ export const resumeData = {
         },
       ],
     },
+    {
+      company: "Blank",
+      period: "2025.05 - 2025.06",
+      projects: [
+        {
+          title: "뉴스잽 - NewsZap",
+          period: "2025.05 - 2024.06",
+          description:
+            "해당 서비스는 뉴스의 편파성을 줄이기 위한 서비스 입니다.\n뉴스의 편파성 판단은 뉴스의 주제, 내용 등 다양한 요소를 AI 및 키워드로 기사의 정치적 성향을 판단 후 최종으로 수치를 시각적으로 나타냅니다.\n정치적인 문제에 사용자들이 뚜렷한 판단을 할 수 있도록 도움을 주기 위해 시작하였습니다.",
+          contributions: ["프론트엔드 인터페이스 구현", "Python & Ollama을 활용하여 AI 뉴스 추천 시스템 구축", "RESTfull API 작업"],
+          techStack: ["TypeScript", "Nextjs", "Emotion", "Python", "Ollama AI", "Monorepo", "AWS(S3 / CF / Route53 / Certificate Manager / EC2)"],
+        },
+      ],
+    },
   ],
   // 스킬
   skills: [
