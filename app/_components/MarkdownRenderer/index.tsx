@@ -17,7 +17,10 @@ interface MarkdownRendererProps {
  * @param param0
  * @returns
  */
-const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, slug }) => {
+const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
+  content,
+  slug,
+}) => {
   useEffect(() => {
     const headings = document.querySelectorAll(".heading-text"); // 클래스 선택자 변경
 
@@ -49,7 +52,12 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, slug }) =>
         .toLowerCase()
         .replace(/[^a-zA-Z0-9]+/g, "-");
       return (
-        <Typography variant="headline.100" {...props} id={id} className="mt-[40px] mb-[5px]">
+        <Typography
+          variant="headline.100"
+          {...props}
+          id={id}
+          className="mt-[40px] mb-[5px]"
+        >
           <span className="heading-text relative inline-block">{children}</span>
         </Typography>
       );
@@ -60,7 +68,12 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, slug }) =>
         .toLowerCase()
         .replace(/[^a-zA-Z0-9]+/g, "-");
       return (
-        <Typography variant="headline.200" {...props} id={id} className="mt-[30px] mb-[5px]">
+        <Typography
+          variant="headline.200"
+          {...props}
+          id={id}
+          className="mt-[30px] mb-[5px]"
+        >
           <span className="heading-text relative inline-block">{children}</span>
         </Typography>
       );
@@ -71,14 +84,23 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, slug }) =>
         .toLowerCase()
         .replace(/[^a-zA-Z0-9]+/g, "-");
       return (
-        <Typography variant="headline.300" {...props} id={id} className="mt-[20px] mb-[5px]">
-          {children}
+        <Typography
+          variant="headline.300"
+          {...props}
+          id={id}
+          className="mt-[20px] mb-[5px]"
+        >
+          <span className="heading-text relative inline-block">{children}</span>
         </Typography>
       );
     },
     h4: ({ children, ...props }: any) => (
-      <Typography variant="headline.400" {...props} className="mt-[10px] mb-[5px]">
-        {children}
+      <Typography
+        variant="headline.400"
+        {...props}
+        className="mt-[10px] mb-[5px]"
+      >
+        <span className="heading-text relative inline-block">{children}</span>
       </Typography>
     ),
     h5: ({ children, ...props }: any) => (
@@ -92,14 +114,24 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, slug }) =>
       </Typography>
     ),
     p: ({ children, ...props }: any) => (
-      <Typography variant="body.100" color="DEFAULT" {...props} className="mt-[24px] mb-[8px]">
+      <Typography
+        variant="body.100"
+        color="DEFAULT"
+        {...props}
+        className="mt-[24px] mb-[8px]"
+      >
         {children}
       </Typography>
     ),
-    strong: ({ children }: any) => <span className="font-semibold">{children}</span>,
+    strong: ({ children }: any) => (
+      <span className="font-semibold">{children}</span>
+    ),
     em: ({ children }: any) => <em>{children}</em>,
     blockquote: ({ children }: any) => (
-      <Typography variant="body.200" className="border-l-4 border-light-bg-1 dark:border-dark-bg-1 pl-4 italic">
+      <Typography
+        variant="body.200"
+        className="border-l-4 border-light-bg-1 dark:border-dark-bg-1 pl-4 italic"
+      >
         {children}
       </Typography>
     ),
@@ -108,7 +140,10 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, slug }) =>
       const language = match ? match[1] : "";
       if (inline) {
         return (
-          <code className="bg-light-bg-1 dark:bg-dark-bg-1 rounded px-1" {...props}>
+          <code
+            className="bg-light-bg-1 dark:bg-dark-bg-1 rounded px-1"
+            {...props}
+          >
             {children}
           </code>
         );
@@ -121,17 +156,39 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, slug }) =>
         </div>
       );
     },
-    ul: ({ children }: any) => <ul className="text-light-text dark:text-dark-text list-disc ml-4 my-2 font-light">{children}</ul>,
-    ol: ({ children }: any) => <ol className="text-light-text dark:text-dark-text list-decimal ml-4 my-2 font-light">{children}</ol>,
+    ul: ({ children }: any) => (
+      <ul className="text-light-text dark:text-dark-text list-disc ml-4 my-2 font-light">
+        {children}
+      </ul>
+    ),
+    ol: ({ children }: any) => (
+      <ol className="text-light-text dark:text-dark-text list-decimal ml-4 my-2 font-light">
+        {children}
+      </ol>
+    ),
     li: ({ children, ...props }: any) => (
-      <li className="text-light-text dark:text-dark-text font-light pl-1 marker:text-xs" {...props}>
+      <li
+        className="text-light-text dark:text-dark-text font-light pl-1 marker:text-xs"
+        {...props}
+      >
         {children}
       </li>
     ),
     img: ({ src, alt }: any) => {
       // 상대 경로를 절대 경로로 변환
-      const imageSrc = src.startsWith("http://") || src.startsWith("https://") ? src : `/blog-posts/${slug}/${src.replace(/^\.?\//, "")}`;
-      return <Image src={imageSrc} alt={alt} width={500} height={350} layout="responsive" />;
+      const imageSrc =
+        src.startsWith("http://") || src.startsWith("https://")
+          ? src
+          : `/blog-posts/${slug}/${src.replace(/^\.?\//, "")}`;
+      return (
+        <Image
+          src={imageSrc}
+          alt={alt}
+          width={500}
+          height={350}
+          layout="responsive"
+        />
+      );
     },
   };
 
