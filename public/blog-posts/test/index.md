@@ -6,7 +6,7 @@ excerpt: 조만간 새로운 포스팅으로 찾아뵙겠습니다!
 tags:
   - react
   - nextjs
-draft: false
+draft: true
 thumbnail: image.png
 ---
 
