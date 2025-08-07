@@ -158,14 +158,14 @@ export default function Header() {
               >
                 Resume
               </Typography>
-              <Typography
+              {/* <Typography
                 variant="body.100"
                 color="DEFAULT"
                 className="cursor-pointer select-none"
                 onClick={() => handleNavigation("/photos")}
               >
                 Gallery
-              </Typography>
+              </Typography> */}
             </div>
             <button
               onClick={toggleTheme}
