@@ -16,38 +16,93 @@ export const resumeData = {
           period: "2024.08 - 현재",
           description:
             "AWS, Azure, GCP, OCI SDK를 활용하여 통합 멀티 클라우드 관리 서비스 입니다.\n여러 클라우드의 리소스를 단일 인터페이스에서 모니터링하고 제어할 수 있는 시스템을 개발했으며, VM 관리와 대시보드, 모니터링 기능을 담당하여 구현했습니다.\n이때 자연스럽게 클라우드에 대한 지식 또한 크게 늘었습니다.",
-          contributions: ["프론트엔드 기술환경 구성 및 기본 기능 구현", "프론트엔드 인터페이스 구현"],
-          techStack: ["TypeScript", "Nextjs", "React", "styled-components", "Github Action", "SST"],
+          contributions: [
+            "프론트엔드 기술환경 구성 및 기본 기능 구현",
+            "프론트엔드 인터페이스 구현",
+          ],
+          techStack: [
+            "TypeScript",
+            "Nextjs",
+            "React",
+            "styled-components",
+            "Github Action",
+            "SST",
+          ],
         },
         {
           title: "Company Homepage",
           period: "2024.10 - 2024.11",
           description:
             "기업 웹사이트를 프론트와 백을 혼자 맡아 구축하였습니다.\n메타데이터 최적화와 SEO 작업을 수행하여 검색엔진 노출도가 50% 증가했습니다.\n반응형 디자인을 적용하여 다양한 디바이스에서 일관된 사용자 경험을 제공하였습니다.\n또한 내부 디자인 시스템을 구축하여 UI 컴포넌트의 재사용성과 일관성을 향상시켰습니다.",
-          contributions: ["프론트엔드 기술환경 구성 및 기본 기능 구현", "반응형 디자인 시스템과 재사용 가능한 UI 컴포넌트 개발", "기업 웹사이트 구축 및 메타데이터 SEO 최적화 작업"],
+          contributions: [
+            "프론트엔드 기술환경 구성 및 기본 기능 구현",
+            "반응형 디자인 시스템과 재사용 가능한 UI 컴포넌트 개발",
+            "기업 웹사이트 구축 및 메타데이터 SEO 최적화 작업",
+          ],
           techStack: ["TypeScript", "Nextjs", "React", "TailwindCSS", "SST"],
         },
         {
           title: "Company Admin",
           period: "2023.08 - 2023.12",
-          description: "관리자 웹 콘솔을 구축하여 회사의 서비스와 리소스를 효율적으로 관리할 수 있는 시스템을 개발했습니다.\n자동화된 배포 파이프라인을 구축하고 AWS 서비스를 활용하여 안정적인 인프라를 구성하였습니다.",
-          contributions: ["프론트엔드 기술환경 구성 및 기본 기능 구현", "사용자 관리, 권한 제어 기능을 갖춘 관리자 콘솔 개발", "Github Action을 통한 CI/CD 파이프라인 구축으로 자동화된 배포 환경 구성", "AWS 클라우드 서비스를 활용한 인프라 아키텍처 설계 및 구현"],
-          techStack: ["TypeScript", "Nextjs", "Styled Component", "Github Action", "AWS(S3 / CF / Route53 / Certificate Manager)", "Nestjs"],
+          description:
+            "관리자 웹 콘솔을 구축하여 회사의 서비스와 리소스를 효율적으로 관리할 수 있는 시스템을 개발했습니다.\n자동화된 배포 파이프라인을 구축하고 AWS 서비스를 활용하여 안정적인 인프라를 구성하였습니다.",
+          contributions: [
+            "프론트엔드 기술환경 구성 및 기본 기능 구현",
+            "사용자 관리, 권한 제어 기능을 갖춘 관리자 콘솔 개발",
+            "Github Action을 통한 CI/CD 파이프라인 구축으로 자동화된 배포 환경 구성",
+            "AWS 클라우드 서비스를 활용한 인프라 아키텍처 설계 및 구현",
+          ],
+          techStack: [
+            "TypeScript",
+            "Nextjs",
+            "Styled Component",
+            "Github Action",
+            "AWS(S3 / CF / Route53 / Certificate Manager)",
+            "Nestjs",
+          ],
         },
         {
           title: "B2B 데이터 마켓 서비스",
           period: "2023.05 - 2024.08",
           description:
             "기업들이 데이터를 사고팔 수 있는 온라인 마켓플레이스의 프론트엔드를 개발했습니다.\n판매자가 데이터 상품을 등록하고 구매자가 쉽게 찾아볼 수 있는 화면을 만들었으며, 상품 검색과 필터 기능을 구현했습니다.\n또한 구매자가 데이터 상품의 정보를 쉽게 확인하고 구매할 수 있도록 상세 페이지와 결제 화면을 개발했습니다.",
-          contributions: ["데이터 상품 목록과 검색/필터 화면 개발", "상품 상세 페이지 UI 구현", "회사 인증 및 결제 화면 개발", "모바일/태블릿 대응 반응형 웹 구현"],
-          techStack: ["TypeScript", "Nextjs", "Styled Component", "Github Action", "AWS(S3 / CF / Route53 / Certificate Manager)", "Nestjs"],
+          contributions: [
+            "데이터 상품 목록과 검색/필터 화면 개발",
+            "상품 상세 페이지 UI 구현",
+            "회사 인증 및 결제 화면 개발",
+            "모바일/태블릿 대응 반응형 웹 구현",
+          ],
+          techStack: [
+            "TypeScript",
+            "Nextjs",
+            "Styled Component",
+            "Github Action",
+            "AWS(S3 / CF / Route53 / Certificate Manager)",
+            "Nestjs",
+          ],
+        },
+        {
+          title: "Plop.js 기반 페이지 보일러플레이트 자동화 시스템 구축",
+          period: "2025.08 - 2025.08",
+          description:
+            "개발 효율성 향상을 위해 CRUD 페이지 생성 과정을 자동화하는 시스템을 구축했습니다. Plop.js 마이크로 제너레이터를 활용하여 일관된 코드 구조와 스타일을 유지하면서 새로운 페이지 생성 시간을 수동 작업 대비 80% 이상 단축했고, 템플릿 기반 코드 생성으로 개발자 간 코드 일관성 문제를 해결했습니다.",
+          contributions: [
+            "템플릿 기반 자동 페이지 생성: 목록 페이지(page.tsx)와 생성 페이지(create/page.tsx) 템플릿 구축",
+            "경로 선택 시스템: Root, AI, Computing, Network 등 7가지 경로 옵션을 통한 유연한 페이지 배치",
+            "Mock 데이터 통합: 개발 초기 단계에서 즉시 테스트 가능한 가짜 데이터 및 번역 함수 자동 생성",
+          ],
+          techStack: ["Plop.js"],
         },
         {
           title: "Zabbix 모니터링 연동 시스템 구축",
           period: "2024.11 - 2024.12",
           description:
             "고객들의 VM 메트릭을 실시간으로 수집하고 모니터링하기 위한 시스템을 구축했습니다.\n쉘 스크립트를 통해 자동 설치 및 연동 프로세스를 구현하여 설치 시간을 건당 최대 30분에서 5분 이하로 단축했고, Docker 컨테이너화를 통해 Zabbix Agent를 배포하여 다양한 OS 환경에서의 호환성 문제를 해결했습니다.",
-          contributions: ["VM 메트릭 수집을 위한 자동화된 Zabbix Agent 설치 스크립트 개발", "Docker 기반 Zabbix Agent 컨테이너화로 크로스 플랫폼 호환성 확보", "Zabbix API를 활용한 자동 호스트 등록 및 모니터링 시스템 연동 구현"],
+          contributions: [
+            "VM 메트릭 수집을 위한 자동화된 Zabbix Agent 설치 스크립트 개발",
+            "Docker 기반 Zabbix Agent 컨테이너화로 크로스 플랫폼 호환성 확보",
+            "Zabbix API를 활용한 자동 호스트 등록 및 모니터링 시스템 연동 구현",
+          ],
           techStack: ["Zabbix", "Shell Script", "Docker", "AWS EC2", "Nestjs"],
         },
         {
@@ -55,7 +110,12 @@ export const resumeData = {
           period: "2023.08 - 2023.08",
           description:
             "초기 스타트업의 개발 프로세스 표준화를 위한 온보딩 가이드를 구축했습니다.\n일관된 코드 컨벤션과 커밋 메시지 규칙을 확립하여 코드 가독성과 유지보수성을 향상시켰습니다.\n표준화된 개발 프로세스 도입으로 팀 간 협업 효율이 증가했고, 개발자 간 의사소통 비용을 크게 줄여 예상되는 개발 생산성이 40% 이상 향상되었습니다.",
-          contributions: ["Git 커밋 메시지 컨벤션 및 브랜치 전략 수립", "프론트엔드 코드 컨벤션 및 아키텍처 가이드라인 작성", "개발 환경 설정 및 배포 프로세스 문서화", "팀 협업 워크플로우 프로세스 정립"],
+          contributions: [
+            "Git 커밋 메시지 컨벤션 및 브랜치 전략 수립",
+            "프론트엔드 코드 컨벤션 및 아키텍처 가이드라인 작성",
+            "개발 환경 설정 및 배포 프로세스 문서화",
+            "팀 협업 워크플로우 프로세스 정립",
+          ],
           techStack: ["Notion"],
         },
       ],
@@ -72,8 +132,23 @@ export const resumeData = {
           period: "2023.12 - 2024.01",
           description:
             "당시 프론트엔드 2명 / 디자이너 1명으로 구성된 팀입니다.\n해당 서비스는 크리스마스 시즌을 타겟으로한 나의 루돌프에게 주변사람들에게 양말(편지)를 즉 크리스마스 기념 편지를 받는 서비스 입니다.\n백엔드와 프론트엔드 둘 다 작업을 진행하였고 해당 서비스로 실사용자 300명 30000건의 트래픽을 받은 경험이 있습니다.",
-          contributions: ["프론트엔드 인터페이스 구현", "관계형 데이터베이스 ERD 및 설계", "Nestjs를 사용하여 서버 구축", "RESTfull API 작업", "Swagger를 활용한 API 명세 적용", "Nginx 웹서버 구성"],
-          techStack: ["TypeScript", "Nextjs", "React", "styled-components", "AWS(S3 / CF / Route53 / Certificate Manager / EC2)", "Nestjs", "Nginx"],
+          contributions: [
+            "프론트엔드 인터페이스 구현",
+            "관계형 데이터베이스 ERD 및 설계",
+            "Nestjs를 사용하여 서버 구축",
+            "RESTfull API 작업",
+            "Swagger를 활용한 API 명세 적용",
+            "Nginx 웹서버 구성",
+          ],
+          techStack: [
+            "TypeScript",
+            "Nextjs",
+            "React",
+            "styled-components",
+            "AWS(S3 / CF / Route53 / Certificate Manager / EC2)",
+            "Nestjs",
+            "Nginx",
+          ],
         },
       ],
     },
@@ -86,8 +161,20 @@ export const resumeData = {
           period: "2025.05 - 2024.06",
           description:
             "해당 서비스는 뉴스의 편파성을 줄이기 위한 서비스 입니다.\n뉴스의 편파성 판단은 뉴스의 주제, 내용 등 다양한 요소를 AI 및 키워드로 기사의 정치적 성향을 판단 후 최종으로 수치를 시각적으로 나타냅니다.\n정치적인 문제에 사용자들이 뚜렷한 판단을 할 수 있도록 도움을 주기 위해 시작하였습니다.",
-          contributions: ["프론트엔드 인터페이스 구현", "Python & Ollama을 활용하여 AI 뉴스 추천 시스템 구축", "RESTfull API 작업"],
-          techStack: ["TypeScript", "Nextjs", "Emotion", "Python", "Ollama AI", "Monorepo", "AWS(S3 / CF / Route53 / Certificate Manager / EC2)"],
+          contributions: [
+            "프론트엔드 인터페이스 구현",
+            "Python & Ollama을 활용하여 AI 뉴스 추천 시스템 구축",
+            "RESTfull API 작업",
+          ],
+          techStack: [
+            "TypeScript",
+            "Nextjs",
+            "Emotion",
+            "Python",
+            "Ollama AI",
+            "Monorepo",
+            "AWS(S3 / CF / Route53 / Certificate Manager / EC2)",
+          ],
         },
       ],
     },
