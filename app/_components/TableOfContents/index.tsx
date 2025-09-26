@@ -9,8 +9,12 @@ export default function TableOfContents({ content }: TableOfContentsProps) {
   const [activeId, setActiveId] = useState<string>("");
 
   useEffect(() => {
-    // 마크다운 내용에서 제목 추출
-    const matches = content.match(/^#{1,3} .+$/gm) || [];
+    // 코드 블록을 제거한 후 제목 추출
+    const contentWithoutCodeBlocks = content
+      .replace(/```[\s\S]*?```/g, "") // 코드 블록 제거
+      .replace(/`[^`]*`/g, ""); // 인라인 코드 제거
+
+    const matches = contentWithoutCodeBlocks.match(/^#{1,3} .+$/gm) || [];
     const items = matches.map((heading) => {
       const level = heading.match(/^#+/)?.[0].length || 0;
       const text = heading.replace(/^#+\s/, "");
@@ -24,7 +28,9 @@ export default function TableOfContents({ content }: TableOfContentsProps) {
     if (articleElement) {
       const headers = articleElement.querySelectorAll("h1, h2, h3");
       headers.forEach((header) => {
-        const id = header.textContent?.toLowerCase().replace(/[^a-zA-Z0-9]+/g, "-") || "";
+        const id =
+          header.textContent?.toLowerCase().replace(/[^a-zA-Z0-9]+/g, "-") ||
+          "";
         header.id = id;
       });
     }
@@ -63,8 +69,17 @@ export default function TableOfContents({ content }: TableOfContentsProps) {
     <nav className="hidden xl:block fixed right-[max(2rem,calc((100vw-700px-4rem)/2-200px))] top-[100px] w-[200px] max-h-[calc(100vh-200px)] overflow-y-auto">
       <ul className="space-y-2">
         {headings.map(({ id, text, level }) => (
-          <li key={id} className="transition-colors duration-200" style={{ paddingLeft: `${(level - 1) * 16}px` }}>
-            <button onClick={() => handleClick(id)} className={`text-left w-full hover:text-primary-4 ${activeId === id ? "text-primary-4" : "text-gray-500"}`}>
+          <li
+            key={id}
+            className="transition-colors duration-200"
+            style={{ paddingLeft: `${(level - 1) * 16}px` }}
+          >
+            <button
+              onClick={() => handleClick(id)}
+              className={`text-left w-full hover:text-primary-4 ${
+                activeId === id ? "text-primary-4" : "text-gray-500"
+              }`}
+            >
               <Typography variant="caption.100">{text}</Typography>
             </button>
           </li>
