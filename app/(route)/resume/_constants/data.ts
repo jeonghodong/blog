@@ -82,6 +82,18 @@ export const resumeData = {
           ],
         },
         {
+          title: "Husky를 활용하여 지속적 통합(Continuous Integration) 작업",
+          period: "2025.09 - 2025.09",
+          description:
+            "Git hooks를 활용한 코드 품질 자동화 시스템 구축. pre-commit, pre-push 단계에서 코드 검증 프로세스를 자동화하여 개발팀의 코드 품질 향상과 일관된 개발 워크플로우 확립",
+          contributions: [
+            "pre-commit 훅을 설정하여 ESLint, Prettier를 통한 코드 린팅 및 포맷팅 자동 검증 구현",
+            "pre-push 훅에 Jest 테스트 자동 실행 기능 추가로 버그가 있는 코드의 원격 저장소 푸시 방지",
+            "빌드 프로세스 자동화를 통한 배포 전 코드 검증 파이프라인 설정",
+          ],
+          techStack: ["Plop.js"],
+        },
+        {
           title: "Plop.js 기반 페이지 보일러플레이트 자동화 시스템 구축",
           period: "2025.08 - 2025.08",
           description:
@@ -94,16 +106,16 @@ export const resumeData = {
           techStack: ["Plop.js"],
         },
         {
-          title: "Zabbix 모니터링 연동 시스템 구축",
-          period: "2024.11 - 2024.12",
+          title: "디자인 시스템 스토리북 적용",
+          period: "2025.08 - 2025.08",
           description:
-            "고객들의 VM 메트릭을 실시간으로 수집하고 모니터링하기 위한 시스템을 구축했습니다.\n쉘 스크립트를 통해 자동 설치 및 연동 프로세스를 구현하여 설치 시간을 건당 최대 30분에서 5분 이하로 단축했고, Docker 컨테이너화를 통해 Zabbix Agent를 배포하여 다양한 OS 환경에서의 호환성 문제를 해결했습니다.",
+            "아토믹 디자인 패턴을 적용하여 Atom-Molecule-Organism 단위로 컴포넌트를 체계화하고 재사용 가능한 UI 라이브러리를 구축했으며, S3 정적 호스팅으로 배포하여 디자이너가 실시간으로 컴포넌트를 확인하고 피드백할 수 있는 환경을 제공함으로써 디자인-개발 간 소통 비용을 30% 절감했습니다. 또한 컴포넌트별 독립적인 개발 및 테스트 환경 구성을 통해 개발 속도 향상과 디버깅 시간 단축을 실현했고, 문서화 기능을 활용하여 컴포넌트 사용법과 Props를 체계적으로 정리함으로써 팀 내 일관된 개발 표준을 확립하고 장기적인 유지보수 효율성을 개선했습니다. 이어서 git-action을 사용하여 배포 자동화하였습니다.",
           contributions: [
-            "VM 메트릭 수집을 위한 자동화된 Zabbix Agent 설치 스크립트 개발",
-            "Docker 기반 Zabbix Agent 컨테이너화로 크로스 플랫폼 호환성 확보",
-            "Zabbix API를 활용한 자동 호스트 등록 및 모니터링 시스템 연동 구현",
+            "아토믹 디자인 패턴 적용",
+            "스토리북 S3 정적 호스팅 배포",
+            "Github Action을 사용하여 배포 자동화",
           ],
-          techStack: ["Zabbix", "Shell Script", "Docker", "AWS EC2", "Nestjs"],
+          techStack: ["Plop.js"],
         },
         {
           title: "사내 온보딩 가이드 작업",
