@@ -17,10 +17,7 @@ interface MarkdownRendererProps {
  * @param param0
  * @returns
  */
-const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
-  content,
-  slug,
-}) => {
+const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, slug }) => {
   useEffect(() => {
     const headings = document.querySelectorAll(".heading-text"); // 클래스 선택자 변경
 
@@ -52,12 +49,7 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
         .toLowerCase()
         .replace(/[^a-zA-Z0-9]+/g, "-");
       return (
-        <Typography
-          variant="headline.100"
-          {...props}
-          id={id}
-          className="mt-[40px] mb-[5px]"
-        >
+        <Typography variant="headline.100" {...props} id={id} className="mt-[40px] mb-[5px]">
           <span className="heading-text relative inline-block">{children}</span>
         </Typography>
       );
@@ -68,12 +60,7 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
         .toLowerCase()
         .replace(/[^a-zA-Z0-9]+/g, "-");
       return (
-        <Typography
-          variant="headline.200"
-          {...props}
-          id={id}
-          className="mt-[30px] mb-[5px]"
-        >
+        <Typography variant="headline.200" {...props} id={id} className="mt-[30px] mb-[5px]">
           <span className="heading-text relative inline-block">{children}</span>
         </Typography>
       );
@@ -84,22 +71,13 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
         .toLowerCase()
         .replace(/[^a-zA-Z0-9]+/g, "-");
       return (
-        <Typography
-          variant="headline.300"
-          {...props}
-          id={id}
-          className="mt-[20px] mb-[5px]"
-        >
+        <Typography variant="headline.300" {...props} id={id} className="mt-[20px] mb-[5px]">
           <span className="heading-text relative inline-block">{children}</span>
         </Typography>
       );
     },
     h4: ({ children, ...props }: any) => (
-      <Typography
-        variant="headline.400"
-        {...props}
-        className="mt-[10px] mb-[5px]"
-      >
+      <Typography variant="headline.400" {...props} className="mt-[10px] mb-[5px]">
         <span className="heading-text relative inline-block">{children}</span>
       </Typography>
     ),
@@ -114,24 +92,14 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
       </Typography>
     ),
     p: ({ children, ...props }: any) => (
-      <Typography
-        variant="body.100"
-        color="DEFAULT"
-        {...props}
-        className="mt-[24px] mb-[8px]"
-      >
+      <Typography variant="body.100" color="DEFAULT" {...props} className="mt-[24px] mb-[8px]">
         {children}
       </Typography>
     ),
-    strong: ({ children }: any) => (
-      <span className="font-semibold">{children}</span>
-    ),
+    strong: ({ children }: any) => <span className="font-semibold">{children}</span>,
     em: ({ children }: any) => <em>{children}</em>,
     blockquote: ({ children }: any) => (
-      <Typography
-        variant="body.200"
-        className="border-l-4 border-light-bg-1 dark:border-dark-bg-1 pl-4 italic"
-      >
+      <Typography variant="body.200" className="border-l-4 border-light-bg-1 dark:border-dark-bg-1 pl-4 italic">
         {children}
       </Typography>
     ),
@@ -141,7 +109,7 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
       if (inline) {
         return (
           <code
-            className="bg-light-bg-1 dark:bg-dark-bg-1 rounded px-1"
+            className="bg-gray-100 dark:bg-dark-bg-1 text-primary-4 dark:text-primary-2 px-1.5 py-0.5 rounded font-mono text-[0.9em] border border-gray-200 dark:border-dark-border"
             {...props}
           >
             {children}
@@ -149,46 +117,36 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
         );
       }
       return (
-        <div className="my-4 bg-light-bg-1 dark:bg-dark-bg-1 rounded p-4 overflow-x-auto">
-          <code className={language ? `language-${language}` : ""} {...props}>
-            {children}
-          </code>
+        <div className="my-6 bg-[#f6f8fa] dark:bg-[#161b22] rounded-lg border border-gray-200 dark:border-dark-border overflow-hidden">
+          {language && (
+            <div className="bg-gray-100 dark:bg-[#0d1117] px-4 py-2 border-b border-gray-200 dark:border-dark-border">
+              <span className="text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wide">
+                {language}
+              </span>
+            </div>
+          )}
+          <div className="p-4 overflow-x-auto">
+            <code
+              className={`font-mono text-sm text-gray-800 dark:text-gray-200 ${language ? `language-${language}` : ""}`}
+              {...props}
+            >
+              {children}
+            </code>
+          </div>
         </div>
       );
     },
-    ul: ({ children }: any) => (
-      <ul className="text-light-text dark:text-dark-text list-disc ml-4 my-2 font-light">
-        {children}
-      </ul>
-    ),
-    ol: ({ children }: any) => (
-      <ol className="text-light-text dark:text-dark-text list-decimal ml-4 my-2 font-light">
-        {children}
-      </ol>
-    ),
+    ul: ({ children }: any) => <ul className="text-light-text dark:text-dark-text list-disc ml-4 my-2 font-light">{children}</ul>,
+    ol: ({ children }: any) => <ol className="text-light-text dark:text-dark-text list-decimal ml-4 my-2 font-light">{children}</ol>,
     li: ({ children, ...props }: any) => (
-      <li
-        className="text-light-text dark:text-dark-text font-light pl-1 marker:text-xs"
-        {...props}
-      >
+      <li className="text-light-text dark:text-dark-text font-light pl-1 marker:text-xs my-5" {...props}>
         {children}
       </li>
     ),
     img: ({ src, alt }: any) => {
       // 상대 경로를 절대 경로로 변환
-      const imageSrc =
-        src.startsWith("http://") || src.startsWith("https://")
-          ? src
-          : `/blog-posts/${slug}/${src.replace(/^\.?\//, "")}`;
-      return (
-        <Image
-          src={imageSrc}
-          alt={alt}
-          width={500}
-          height={350}
-          layout="responsive"
-        />
-      );
+      const imageSrc = src.startsWith("http://") || src.startsWith("https://") ? src : `/blog-posts/${slug}/${src.replace(/^\.?\//, "")}`;
+      return <Image src={imageSrc} alt={alt} width={500} height={350} layout="responsive" />;
     },
   };
 
@@ -214,6 +172,77 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
 
         .heading-text.highlight::before {
           width: 100%;
+        }
+
+        /* 코드 하이라이팅 - 주석 */
+        code .token.comment,
+        code .token.prolog,
+        code .token.doctype,
+        code .token.cdata,
+        code .comment {
+          color: #6b7280;
+          font-style: italic;
+        }
+
+        .dark code .token.comment,
+        .dark code .token.prolog,
+        .dark code .token.doctype,
+        .dark code .token.cdata,
+        .dark code .comment {
+          color: #9ca3af;
+        }
+
+        /* 키워드 */
+        code .token.keyword,
+        code .token.operator {
+          color: #d73a49;
+          font-weight: 600;
+        }
+
+        .dark code .token.keyword,
+        .dark code .token.operator {
+          color: #ff7b72;
+        }
+
+        /* 문자열 */
+        code .token.string,
+        code .token.attr-value {
+          color: #22863a;
+        }
+
+        .dark code .token.string,
+        .dark code .token.attr-value {
+          color: #a5d6ff;
+        }
+
+        /* 함수 */
+        code .token.function {
+          color: #6f42c1;
+        }
+
+        .dark code .token.function {
+          color: #d2a8ff;
+        }
+
+        /* 숫자 */
+        code .token.number,
+        code .token.boolean {
+          color: #005cc5;
+        }
+
+        .dark code .token.number,
+        .dark code .token.boolean {
+          color: #79c0ff;
+        }
+
+        /* 클래스명 */
+        code .token.class-name {
+          color: #6f42c1;
+          font-weight: 600;
+        }
+
+        .dark code .token.class-name {
+          color: #d2a8ff;
         }
       `}</style>
       <ReactMarkdown components={components}>{content}</ReactMarkdown>
