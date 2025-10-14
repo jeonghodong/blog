@@ -3,7 +3,8 @@ import { Metadata, ResolvingMetadata } from "next";
 import MarkdownRenderer from "@/app/_components/MarkdownRenderer";
 import TableOfContents from "@/app/_components/TableOfContents";
 import { Typography } from "@/app/_components/Typography";
-import { getPostData } from "@/app/_lib/posts";
+import RelatedPosts from "@/app/_components/RelatedPosts";
+import { getPostData, getAllPosts } from "@/app/_lib/posts";
 import { formatDate } from "@/app/_utils/date";
 import Image from "next/image";
 import { createPostMetadata } from "@/app/_lib/seo/metadata";
@@ -19,6 +20,7 @@ export default async function Page({ params }: { params: { id: string } }) {
   const { id } = params;
 
   const post: PostData = getPostData(id);
+  const allPosts: PostData[] = getAllPosts();
   const { title, thumbnail, content, slug, tags, date }: any = post;
 
   return (
@@ -58,6 +60,9 @@ export default async function Page({ params }: { params: { id: string } }) {
           <div className="mt-[60px]">
             <MarkdownRenderer content={content} slug={slug} />
           </div>
+
+          {/* Related Posts */}
+          <RelatedPosts currentPost={post} allPosts={allPosts} />
         </div>
 
         {/* Table of Contents */}
