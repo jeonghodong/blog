@@ -1,11 +1,12 @@
 ---
-title: 바이브 코딩이 아닌 ,에이전틱 코딩 Claude Code란?
-date: 2025-10-15
-lastmod: 2025-10-15
+title: 바이브 코딩이 아닌, 에이전틱 코딩 Claude Code란?
+date: 2025-10-03
+lastmod: 2025-10-03
 excerpt: 코딩이라는 행위 자체가 변하고 있다.
 tags:
   - AI
   - Claude
+  - 생각
 draft: false
 thumbnail: image.png
 ---
