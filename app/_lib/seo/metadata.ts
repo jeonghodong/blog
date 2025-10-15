@@ -7,13 +7,17 @@ import { PostData } from "../types";
  * 정적 페이지 메타데이터 생성 함수
  */
 export function createPageMetadata(title: string, description: string, path: string): Metadata {
+  const fullUrl = `${SITE_CONFIG.url}${path}`;
   return {
     title,
     description,
+    alternates: {
+      canonical: fullUrl,
+    },
     openGraph: {
       title: `${title} | ${SITE_CONFIG.title}`,
       description,
-      url: `${SITE_CONFIG.url}${path}`,
+      url: fullUrl,
       images: DEFAULT_METADATA.openGraph?.images,
     },
     twitter: {
@@ -33,24 +37,29 @@ export async function createPostMetadata(post: PostData, parent: ResolvingMetada
   // 부모 메타데이터의 이미지 참조 (fallback용)
   const previousImages = (await parent)?.openGraph?.images || [];
 
-  // 첫 150자를 설명으로 사용 (excerpt가 없는 경우)
-  const description = excerpt || content.substring(0, 150).replace(/[#*`]/g, "") + "...";
+  // 첫 150-160자를 설명으로 사용 (excerpt가 없는 경우)
+  const description = excerpt || content.substring(0, 150).replace(/[#*`\n]/g, "").trim() + "...";
 
   // 실제 썸네일 URL (상대 경로인 경우 절대 경로로 변환)
   const absoluteThumbnail = thumbnail.startsWith("http") ? thumbnail : `${process.env.NEXT_PUBLIC_SITE_URL || SITE_CONFIG.url}${thumbnail}`;
+
+  const postUrl = `${SITE_CONFIG.url}/post/${slug}`;
 
   return {
     title,
     description,
     keywords: [...((DEFAULT_METADATA.keywords as string[]) || []), ...tags],
     authors: [{ name: SITE_CONFIG.author }],
+    alternates: {
+      canonical: postUrl,
+    },
 
     // 오픈그래프 메타데이터
     openGraph: {
       type: "article",
       title,
       description,
-      url: `${SITE_CONFIG.url}/post/${slug}`,
+      url: postUrl,
       images: [
         {
           url: absoluteThumbnail,
@@ -89,7 +98,7 @@ export async function createPostMetadata(post: PostData, parent: ResolvingMetada
         description,
         mainEntityOfPage: {
           "@type": "WebPage",
-          "@id": `${SITE_CONFIG.url}/post/${slug}`,
+          "@id": postUrl,
         },
       }),
     },

@@ -4,11 +4,20 @@ import MarkdownRenderer from "@/app/_components/MarkdownRenderer";
 import TableOfContents from "@/app/_components/TableOfContents";
 import { Typography } from "@/app/_components/Typography";
 import RelatedPosts from "@/app/_components/RelatedPosts";
+import JsonLd from "@/app/_components/JsonLd";
 import { getPostData, getAllPosts } from "@/app/_lib/posts";
 import { formatDate } from "@/app/_utils/date";
 import Image from "next/image";
 import { createPostMetadata } from "@/app/_lib/seo/metadata";
 import { PostData } from "@/app/_lib/types";
+import { SITE_CONFIG } from "@/app/_lib/seo/config";
+
+export async function generateStaticParams() {
+  const posts = getAllPosts();
+  return posts.map((post) => ({
+    id: post.slug,
+  }));
+}
 
 export async function generateMetadata({ params }: { params: { id: string } }, parent: ResolvingMetadata): Promise<Metadata> {
   const { id } = params;
@@ -21,10 +30,46 @@ export default async function Page({ params }: { params: { id: string } }) {
 
   const post: PostData = getPostData(id);
   const allPosts: PostData[] = getAllPosts();
-  const { title, thumbnail, content, slug, tags, date }: any = post;
+  const { title, thumbnail, content, slug, tags, date, lastmod }: any = post;
+
+  // 절대 URL로 변환
+  const absoluteThumbnail = thumbnail.startsWith("http") ? thumbnail : `${SITE_CONFIG.url}${thumbnail}`;
+  const postUrl = `${SITE_CONFIG.url}/post/${slug}`;
+
+  // JSON-LD 구조화된 데이터
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: title,
+    image: absoluteThumbnail,
+    datePublished: date,
+    dateModified: lastmod || date,
+    author: {
+      "@type": "Person",
+      name: SITE_CONFIG.author,
+      url: SITE_CONFIG.url,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: SITE_CONFIG.title,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_CONFIG.url}/images/og_image.png`,
+      },
+    },
+    keywords: tags.join(", "),
+    description: post.excerpt || content.substring(0, 150).replace(/[#*`]/g, "") + "...",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": postUrl,
+    },
+    url: postUrl,
+  };
 
   return (
-    <div className="relative max-w-[700px] mx-auto px-4">
+    <>
+      <JsonLd data={jsonLd} />
+      <div className="relative max-w-[700px] mx-auto px-4">
       {/* 기존 내용 */}
       <div className="flex justify-between">
         <div className="w-full lg:w-[700px]">
@@ -68,6 +113,7 @@ export default async function Page({ params }: { params: { id: string } }) {
         {/* Table of Contents */}
         <TableOfContents content={content} />
       </div>
-    </div>
+      </div>
+    </>
   );
 }
