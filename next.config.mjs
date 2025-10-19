@@ -25,8 +25,6 @@ const nextConfig = {
   // 성능 최적화
   compress: true,
   poweredByHeader: false,
-  // 정적 페이지 생성 최적화
-  output: "standalone",
 };
 
 export default nextConfig;

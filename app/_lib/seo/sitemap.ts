@@ -12,7 +12,7 @@ export function generateSitemap(): MetadataRoute.Sitemap {
   // 블로그 포스트 URL 생성
   const postUrls = posts.map((post) => ({
     url: `${baseUrl}/post/${post.slug}`,
-    lastModified: new Date(post.date),
+    lastModified: new Date(post.lastmod || post.date),
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
