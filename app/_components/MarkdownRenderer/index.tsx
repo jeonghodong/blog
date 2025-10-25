@@ -92,9 +92,9 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, slug }) =>
       </Typography>
     ),
     p: ({ children, ...props }: any) => (
-      <Typography variant="body.100" color="DEFAULT" {...props} className="mt-[24px] mb-[8px]">
+      <div {...props} className="text-[14px] md:text-[16px] font-light tracking-[-0.5px] leading-[27px] text-light-text dark:text-dark-text mt-[24px] mb-[8px]">
         {children}
-      </Typography>
+      </div>
     ),
     strong: ({ children }: any) => <span className="font-semibold">{children}</span>,
     em: ({ children }: any) => <em>{children}</em>,
