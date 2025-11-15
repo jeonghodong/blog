@@ -1,6 +1,7 @@
 import "./_styles/globals.css";
 import "./_styles/reset.css";
 
+import GoogleAnalytics from "./_components/GoogleAnalytics";
 import Header from "./_components/Header";
 import { DEFAULT_METADATA } from "./_lib/seo/config";
 
@@ -22,6 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
+      <GoogleAnalytics />
       <body className="bg-light-bg dark:bg-dark-bg">
         <InnerLayout>{children}</InnerLayout>
       </body>
