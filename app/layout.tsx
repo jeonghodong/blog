@@ -23,6 +23,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
+      <head>
+        <link rel="manifest" href="/site.webmanifest" />
+        <meta name="theme-color" content="#ffffff" />
+        <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="생각이 존재하는 곳" />
+      </head>
       <GoogleAnalytics />
       <body className="bg-light-bg dark:bg-dark-bg">
         <InnerLayout>{children}</InnerLayout>
