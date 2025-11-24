@@ -52,3 +52,6 @@ next-env.d.ts
 /public/workbox-*.js
 /public/sw.js.map
 /public/workbox-*.js.map
+
+# SCF Deploy state (local deployment tracking)
+.deploy/
