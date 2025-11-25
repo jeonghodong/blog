@@ -125,7 +125,7 @@ export const resumeData = {
           title: "SCF - S3 + CloudFront Auto Deploy CLI",
           period: "2025.10 - 2025.11",
           description:
-            "정적 웹사이트 AWS 배포 시 S3 업로드, CloudFront 설정, 캐시 무효화를 매번 수동으로 처리해야 하는 반복 작업으로 시간 낭비와 휴먼 에러가 발생했습니다. TypeScript 기반 CLI 도구를 개발하여 단일 명령어로 전체 배포 과정을 자동화했으며, 파일 해시 비교를 통한 증분 배포로 배포 시간을 15분에서 2분으로 87% 단축했습니다. npm 패키지로 배포하여 오픈소스화했습니다.",
+            "AWS 정적 웹사이트 배포 시 S3 업로드, CloudFront 설정, 캐시 무효화 등 15분 걸리는 반복적인 수동 작업을 TypeScript CLI로 자동화했습니다. 파일 해시 비교를 통한 증분 배포로 배포 시간을 2분으로 87% 단축시켰으며, npm 패키지로 오픈소스화하여 개발자 커뮤니티에 기여했습니다.",
           contributions: [
             "TypeScript + Commander.js 기반 CLI 도구 설계 및 배포/삭제/상태확인 명령어 구현",
             "AWS SDK v3를 활용한 S3 버킷 자동 생성 및 파일 업로드 시스템 구축",
