@@ -9,7 +9,7 @@ const pwaConfig = withPWA({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
+  output: process.env.NODE_ENV === "production" ? "export" : undefined,
   trailingSlash: true, // S3 정적 호스팅을 위해 /page -> /page/index.html 생성
   images: {
     unoptimized: true, // 정적 배포를 위해 이미지 최적화 비활성화
