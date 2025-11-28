@@ -22,7 +22,7 @@
     "react-dom": "^18",
     "react-markdown": "^9.0.1",
     "remark": "^15.0.1",
-    "scf-deploy": "^0.6.0",
+    "scf-deploy": "^2.0.2",
     "uuid": "^10.0.0"
   },
   "devDependencies": {
