@@ -98,6 +98,16 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, slug }) =>
     ),
     strong: ({ children }: any) => <span className="font-semibold">{children}</span>,
     em: ({ children }: any) => <em>{children}</em>,
+    a: ({ href, children }: any) => (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="!text-[#0077B6] dark:!text-[#66ADD3] underline decoration-[#0077B6]/30 dark:decoration-[#66ADD3]/30 underline-offset-2 hover:decoration-[#0077B6] dark:hover:decoration-[#66ADD3] transition-colors"
+      >
+        {children}
+      </a>
+    ),
     blockquote: ({ children }: any) => (
       <Typography variant="body.200" className="border-l-4 border-light-bg-1 dark:border-dark-bg-1 pl-4 italic">
         {children}
